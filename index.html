@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kelas Tauhid 20 Sifat — Akademi I'tiqad Ahlussunnah Waljama'ah</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --green-dark: #1a3d34;
+    --green: #2d5f4f;
+    --green-light: #3d7a64;
+    --gold: #d4a656;
+    --cream: #f8f6f0;
+    --white: #ffffff;
+    --text: #1a3d34;
+    --text-light: #64748b;
+    --text-gray: #94a3b8;
+    --wa: #25d366;
+    --wa-dark: #128c7e;
+    --danger: #ef4444;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, system-ui, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--cream);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    background: var(--green-dark);
+    color: white;
+    padding: 3rem 1.5rem 5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba(134,239,172,0.08) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(212,166,86,0.06) 0%, transparent 40%);
+    pointer-events: none;
+  }
+
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: 
+      repeating-linear-gradient(45deg, white 0, white 1px, transparent 1px, transparent 20px),
+      repeating-linear-gradient(-45deg, white 0, white 1px, transparent 1px, transparent 20px);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 640px;
+    width: 100%;
+    padding-top: 1rem;
+    animation: fadeIn 0.8s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-badge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border: 1.5px solid rgba(255,255,255,0.35);
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    color: white;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 7vw, 3rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .hero h1 .highlight {
+    color: rgba(255,255,255,0.75);
+    font-weight: 700;
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 2.5rem;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-title-box {
+    text-align: left;
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin: 2rem 0 2.5rem;
+  }
+
+  .hero-title-box h2 {
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .hero-title-box p {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.95rem;
+  }
+
+  .hero-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 3rem;
+  }
+
+  .btn-hero-wa {
+    background: var(--wa);
+    color: white;
+    padding: 1.1rem 2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    transition: all 0.3s;
+    border: 2px solid var(--wa);
+    box-shadow: 0 10px 25px rgba(37,211,102,0.3);
+  }
+
+  .btn-hero-wa:hover {
+    background: var(--wa-dark);
+    border-color: var(--wa-dark);
+    transform: translateY(-2px);
+  }
+
+  .btn-hero-form {
+    background: var(--gold);
+    color: var(--green-dark);
+    padding: 1.1rem 2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    transition: all 0.3s;
+    border: 2px solid var(--gold);
+    box-shadow: 0 10px 25px rgba(212,166,86,0.35);
+  }
+
+  .btn-hero-form:hover {
+    background: #c49545;
+    transform: translateY(-2px);
+  }
+
+  .btn-hero-secondary {
+    background: transparent;
+    color: white;
+    padding: 1.1rem 2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    border: 2px solid rgba(255,255,255,0.4);
+    transition: all 0.3s;
+  }
+
+  .btn-hero-secondary:hover {
+    border-color: white;
+    background: rgba(255,255,255,0.05);
+  }
+
+  .wa-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
+
+  .form-icon {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+  }
+
+  .book-wrap {
+    position: relative;
+    z-index: 1;
+    margin-top: 2rem;
+    perspective: 1000px;
+    animation: floatBook 5s ease-in-out infinite;
+  }
+
+  @keyframes floatBook {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .book {
+    width: 240px;
+    height: 340px;
+    margin: 0 auto;
+    position: relative;
+    transform: rotateY(-8deg) rotateX(3deg);
+    transform-style: preserve-3d;
+    box-shadow: 
+      -20px 20px 50px rgba(0,0,0,0.4),
+      -5px 5px 20px rgba(0,0,0,0.2);
+  }
+
+  .book-cover {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, #2d5f4f 0%, #1a3d34 100%);
+    border-radius: 4px 8px 8px 4px;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    border-left: 5px solid #0f261f;
+  }
+
+  .book-cover::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 40%, rgba(212,166,86,0.15), transparent 60%);
+    pointer-events: none;
+  }
+
+  .book-top {
+    text-align: center;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+  }
+
+  .book-title {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin: 1rem 0;
+  }
+
+  .book-title h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  }
+
+  .book-title .sub {
+    font-size: 0.6rem;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  .book-bottom {
+    text-align: center;
+    font-size: 0.6rem;
+    color: rgba(255,255,255,0.6);
+    position: relative;
+    z-index: 1;
+  }
+
+  .book-emblem {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--gold);
+    position: relative;
+    z-index: 1;
+  }
+
+  section {
+    padding: 4rem 1.5rem;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .section-eyebrow {
+    text-align: center;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: clamp(1.6rem, 5vw, 2rem);
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+    color: var(--green-dark);
+  }
+
+  .section-desc {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+
+  .why-section {
+    background: white;
+    max-width: 100%;
+    padding: 4rem 1.5rem;
+  }
+
+  .why-wrap { max-width: 640px; margin: 0 auto; }
+
+  .feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .feature-item {
+    background: white;
+    padding: 1.75rem 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #e8e4da;
+    transition: all 0.3s;
+  }
+
+  .feature-item:hover {
+    border-color: var(--green-light);
+    box-shadow: 0 10px 30px rgba(45,95,79,0.08);
+  }
+
+  .feature-num {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .feature-item h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--green-dark);
+  }
+
+  .feature-item p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .curriculum-section {
+    background: var(--cream);
+    max-width: 100%;
+  }
+
+  .curriculum-wrap { max-width: 640px; margin: 0 auto; }
+
+  .bab-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    border: 1px solid #e8e4da;
+    position: relative;
+  }
+
+  .bab-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--green);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    padding: 0.4rem 1rem;
+    background: #e8f3ee;
+    border-radius: 50px;
+  }
+
+  .bab-card h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: var(--green-dark);
+    line-height: 1.3;
+  }
+
+  .bab-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .bab-list li {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .bab-list li::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 0.55rem;
+  }
+
+  .swipe-hint {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    margin-top: 1rem;
+    font-style: italic;
+  }
+
+  .facilities-section {
+    background: white;
+    max-width: 100%;
+    padding: 4rem 1.5rem;
+  }
+
+  .facilities-wrap { max-width: 640px; margin: 0 auto; }
+
+  .facility-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .facility {
+    background: var(--cream);
+    padding: 1rem 1.25rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--green-dark);
+    transition: all 0.3s;
+  }
+
+  .facility:hover {
+    background: #e8f3ee;
+    transform: translateX(3px);
+  }
+
+  .facility-check {
+    width: 22px;
+    height: 22px;
+    background: var(--green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  .instructor-section {
+    background: var(--cream);
+    max-width: 100%;
+  }
+
+  .instructor-wrap { max-width: 640px; margin: 0 auto; }
+
+  .instructor-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border: 1px solid #e8e4da;
+    margin-bottom: 1rem;
+    transition: all 0.3s;
+  }
+
+  .instructor-card:hover {
+    box-shadow: 0 15px 40px rgba(45,95,79,0.08);
+  }
+
+  .instructor-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #e8f3ee;
+    margin: 0 auto 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    color: var(--green);
+    font-weight: 800;
+  }
+
+  .instructor-role {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .instructor-card h3 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: var(--green-dark);
+  }
+
+  .instructor-card .title {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+  }
+
+  .instructor-badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: #e8f3ee;
+    color: var(--green);
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .audience-section {
+    background: white;
+    max-width: 100%;
+    padding: 4rem 1.5rem;
+  }
+
+  .audience-wrap { max-width: 640px; margin: 0 auto; }
+
+  .audience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .audience-item {
+    padding: 1.5rem;
+    background: var(--cream);
+    border-radius: 12px;
+    border-left: 3px solid var(--gold);
+  }
+
+  .audience-item h4 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    margin-bottom: 0.4rem;
+    color: var(--green-dark);
+  }
+
+  .audience-item p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+  }
+
+  .form-section {
+    background: var(--cream);
+    max-width: 100%;
+    padding: 4rem 1.5rem 5rem;
+  }
+
+  .form-wrap { max-width: 640px; margin: 0 auto; }
+
+  .form-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem 1.75rem;
+    border: 2px solid #e8e4da;
+    box-shadow: 0 20px 60px rgba(26,61,52,0.06);
+  }
+
+  .form-row {
+    margin-bottom: 1.25rem;
+  }
+
+  .form-row label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--green-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .form-row label .required {
+    color: var(--danger);
+  }
+
+  .form-row input,
+  .form-row textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 2px solid #e8e4da;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: var(--text);
+    background: var(--cream);
+    transition: all 0.3s;
+    -webkit-appearance: none;
+  }
+
+  .form-row input:focus,
+  .form-row textarea:focus {
+    outline: none;
+    border-color: var(--green);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(45,95,79,0.08);
+  }
+
+  .form-row textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  .form-row input::placeholder,
+  .form-row textarea::placeholder {
+    color: var(--text-gray);
+  }
+
+  .btn-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 1.15rem;
+    background: var(--green-dark);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: inherit;
+    margin-top: 0.5rem;
+    box-shadow: 0 10px 25px rgba(26,61,52,0.25);
+  }
+
+  .btn-submit:hover {
+    background: var(--green);
+    transform: translateY(-2px);
+  }
+
+  .form-note {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+  }
+
+  .btn-wa-after {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 1.1rem;
+    background: var(--wa);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: inherit;
+    margin-top: 1.5rem;
+    box-shadow: 0 10px 25px rgba(37,211,102,0.3);
+  }
+
+  .btn-wa-after:hover {
+    background: var(--wa-dark);
+    transform: translateY(-2px);
+  }
+
+  .divider-text {
+    text-align: center;
+    color: var(--text-gray);
+    font-size: 0.8rem;
+    margin: 1.5rem 0 0;
+    position: relative;
+  }
+
+  .divider-text::before,
+  .divider-text::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 35%;
+    height: 1px;
+    background: #e8e4da;
+  }
+
+  .divider-text::before { left: 0; }
+  .divider-text::after { right: 0; }
+
+  .float-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: var(--wa);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    z-index: 999;
+    transition: all 0.3s;
+    animation: pulseWa 2s infinite;
+  }
+
+  .float-btn:hover {
+    background: var(--wa-dark);
+    transform: scale(1.1);
+  }
+
+  .float-btn svg {
+    width: 32px;
+    height: 32px;
+    fill: white;
+  }
+
+  @keyframes pulseWa {
+    0%, 100% { box-shadow: 0 10px 30px rgba(37,211,102,0.5), 0 0 0 0 rgba(37,211,102,0.7); }
+    50% { box-shadow: 0 10px 30px rgba(37,211,102,0.5), 0 0 0 15px rgba(37,211,102,0); }
+  }
+
+  footer {
+    background: var(--green-dark);
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  footer .brand {
+    color: white;
+    font-weight: 800;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+
+  .footer-contact {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+
+  footer .footer-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.6rem 1.25rem;
+    border-radius: 50px;
+    transition: all 0.3s;
+    font-size: 0.85rem;
+  }
+
+  footer .footer-wa {
+    color: var(--wa);
+    border: 1.5px solid var(--wa);
+  }
+
+  footer .footer-wa:hover {
+    background: var(--wa);
+    color: white;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (min-width: 768px) {
+    section { padding: 5rem 2rem; }
+    .hero { padding: 5rem 2rem 6rem; }
+    .form-section { padding: 5rem 2rem 6rem; }
+  }
+
+  @media (max-width: 380px) {
+    .hero h1 { font-size: 1.75rem; }
+    .book { width: 200px; height: 290px; }
+    .book-title h3 { font-size: 1.5rem; }
+    .float-btn { width: 54px; height: 54px; }
+    .float-btn svg { width: 28px; height: 28px; }
+    .form-card { padding: 2rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-pattern"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">Akademi I'tiqad Aswaja</div>
+
+    <h1>
+      Kelas Tauhid<br>
+      <span class="highlight">20 Sifat</span>
+    </h1>
+
+    <p class="hero-desc">
+      Mempelajari 20 Sifat wajib bagi Allah secara bertahap, terstruktur, dan mudah diikuti bagi pelajar, santri, mahasiswa, maupun umum.
+    </p>
+
+    <div class="hero-title-box">
+      <h2>I'tiqad Ahlussunnah Waljama'ah</h2>
+      <p>Panduan mengenal Allah melalui 20 Sifat</p>
+    </div>
+
+    <div class="hero-cta">
+      <a href="#daftar" class="btn-hero-form">
+        <svg class="form-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        Daftar Kelas Sekarang
+      </a>
+      <a href="https://chat.whatsapp.com/K92YpV3Kfnt1fuYjJc4sBY" class="btn-hero-wa" target="_blank">
+        <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Gabung Komunitas Aswaja
+      </a>
+      <a href="#kurikulum" class="btn-hero-secondary">Lihat Materi</a>
+    </div>
+  </div>
+
+  <div class="book-wrap">
+    <div class="book">
+      <div class="book-cover">
+        <div class="book-top">Ilmu Tauhid</div>
+        <div class="book-title">
+          <div class="book-emblem">☪</div>
+          <h3>20 SIFAT</h3>
+          <div class="sub">Akademi I'tiqad Aswaja</div>
+        </div>
+        <div class="book-bottom">Edisi 2025</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="why-section">
+  <div class="why-wrap">
+    <div class="reveal">
+      <div class="section-eyebrow">Mengapa Pembelajaran Ini?</div>
+      <h2 class="section-title">Mengenal Allah adalah pondasi utama seorang hamba.</h2>
+      <p class="section-desc">
+        Memahami 20 Sifat wajib bagi Allah merupakan dasar ilmu tauhid yang harus diketahui setiap Muslim. Dengan mengenal Allah melalui sifat-sifat-Nya, seorang hamba akan semakin dekat dan mengenal Tuhannya.
+        <br><br>
+        Kelas Ilmu Tauhid ini disusun untuk membantu peserta memahami 20 Sifat Allah secara bertahap, mudah, dan terstruktur sesuai pemahaman Ahlussunnah Waljama'ah.
+      </p>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="reveal">
+    <div class="section-eyebrow">Tentang Pembelajaran</div>
+    <h2 class="section-title">20 Sifat yang disusun secara sistematis</h2>
+    <p class="section-desc">
+      Bukan sekadar hafalan. Peserta akan memahami makna setiap sifat, dalil-dalilnya, serta penerapannya dalam kehidupan sehari-hari.
+    </p>
+  </div>
+
+  <div class="feature-list">
+    <div class="feature-item reveal">
+      <div class="feature-num">01</div>
+      <h3>Terstruktur</h3>
+      <p>Materi disusun dengan urutan yang jelas dan saling berkesinambungan.</p>
+    </div>
+    <div class="feature-item reveal">
+      <div class="feature-num">02</div>
+      <h3>Komprehensif</h3>
+      <p>Mencakup seluruh 20 Sifat wajib Allah beserta penjelasan dan dalilnya.</p>
+    </div>
+    <div class="feature-item reveal">
+      <div class="feature-num">03</div>
+      <h3>Dapat Dipelajari Bertahap</h3>
+      <p>Peserta dapat mengikuti materi secara bertahap sesuai kemampuan masing-masing.</p>
+    </div>
+  </div>
+</section>
+
+<div class="curriculum-section" id="kurikulum">
+  <div class="curriculum-wrap">
+    <div class="reveal" style="padding: 4rem 0 2rem;">
+      <div class="section-eyebrow">Daftar Materi</div>
+      <h2 class="section-title">Apa saja yang akan dipelajari?</h2>
+      <p class="section-desc">
+        Berikut gambaran materi dalam Kelas Ilmu Tauhid — 20 Sifat
+      </p>
+    </div>
+
+    <div class="bab-card reveal">
+      <div class="bab-badge">01 — 20 Sifat Wajib Allah</div>
+      <h3>Mengenal Allah Melalui 20 Sifat</h3>
+      <ul class="bab-list">
+        <li>Wujud — Allah itu Ada</li>
+        <li>Qidam — Allah itu Dahulu</li>
+        <li>Baqa' — Allah itu Kekal</li>
+        <li>Mukhalafatu lil hawaditsi — Allah Berbeda dengan Makhluk</li>
+        <li>Qiyamuhu binafsihi — Allah Berdiri Sendiri</li>
+      </ul>
+    </div>
+
+    <p class="swipe-hint">— Masih ada 15 sifat lainnya yang akan dibahas —</p>
+  </div>
+</div>
+
+<div class="facilities-section">
+  <div class="facilities-wrap">
+    <div class="reveal">
+      <div class="section-eyebrow">Fasilitas</div>
+      <h2 class="section-title">Apa Saja yang Akan Anda Dapatkan?</h2>
+      <p class="section-desc">
+        Kami tidak hanya menyediakan materi, tetapi juga mendampingi proses belajar Anda secara bertahap.
+        <br><br>
+        Dengan mengikuti kelas ini, Anda akan mendapatkan:
+      </p>
+    </div>
+
+    <div class="facility-list">
+      <div class="facility reveal">
+        <div class="facility-check">✓</div>
+        <span>Akses Materi Selamanya (Lifetime)</span>
+      </div>
+      <div class="facility reveal">
+        <div class="facility-check">✓</div>
+        <span>Kurikulum Belajar Terstruktur</span>
+      </div>
+      <div class="facility reveal">
+        <div class="facility-check">✓</div>
+        <span>Pembahasan 20 Sifat Wajib Allah</span>
+      </div>
+      <div class="facility reveal">
+        <div class="facility-check">✓</div>
+        <span>Dalil-dalil dari Al-Qur'an dan Hadits</span>
+      </div>
+      <div class="facility reveal">
+        <div class="facility-check">✓</div>
+        <span>Evaluasi Progres Belajar</span>
+      </div>
+      <div class="facility reveal">
+        <div class="facility-check">✓</div>
+        <span>Ujian Akhir Komprehensif</span>
+      </div>
+      <div class="facility reveal">
+        <div class="facility-check">✓</div>
+        <span>Grup Diskusi Interaktif</span>
+      </div>
+      <div class="facility reveal">
+        <div class="facility-check">✓</div>
+        <span>E-Book Materi Pembelajaran</span>
+      </div>
+      <div class="facility reveal">
+        <div class="facility-check">✓</div>
+        <span>Sertifikat Kelulusan</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="instructor-section">
+  <div class="instructor-wrap">
+    <div class="reveal" style="padding: 4rem 0 2rem;">
+      <div class="section-eyebrow">Pembimbing</div>
+      <h2 class="section-title">Dibimbing oleh Asatidzah Aswaja</h2>
+      <p class="section-desc">
+        Pembelajaran didampingi oleh pengajar berpengalaman di bidang ilmu tauhid sesuai pemahaman Ahlussunnah Waljama'ah.
+      </p>
+    </div>
+
+    <div class="instructor-card reveal">
+      <div class="instructor-avatar">AT</div>
+      <div class="instructor-role">Pembimbing</div>
+      <h3>Tim Asatidzah</h3>
+      <p class="title">Akademi I'tiqad Ahlussunnah Waljama'ah</p>
+      <div class="instructor-badge">Pengajar Berpengalaman</div>
+    </div>
+  </div>
+</div>
+
+<div class="audience-section">
+  <div class="audience-wrap">
+    <div class="reveal">
+      <div class="section-eyebrow">Siapa yang Bisa Mengikuti?</div>
+      <h2 class="section-title">Terbuka bagi siapa saja yang ingin belajar.</h2>
+    </div>
+
+    <div class="audience-list">
+      <div class="audience-item reveal">
+        <h4>Pemula</h4>
+        <p>Bagi yang ingin mulai mempelajari ilmu tauhid dari dasar.</p>
+      </div>
+      <div class="audience-item reveal">
+        <h4>Pelajar & Santri</h4>
+        <p>Untuk membantu memahami materi dasar ilmu tauhid.</p>
+      </div>
+      <div class="audience-item reveal">
+        <h4>Mahasiswa & Umum</h4>
+        <p>Bagi yang ingin memiliki pemahaman yang benar tentang sifat-sifat Allah.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="form-section" id="daftar">
+  <div class="form-wrap">
+    <div class="reveal">
+      <div class="section-eyebrow">Formulir Pendaftaran</div>
+      <h2 class="section-title">Daftar Kelas Tauhid 20 Sifat</h2>
+      <p class="section-desc">
+        Isi data berikut untuk mendaftar. Setelah mendaftar, silakan bergabung ke komunitas WhatsApp.
+      </p>
+    </div>
+
+    <div class="form-card reveal">
+      <form action="https://formsubmit.co/tgkm462@gmail.com" method="POST">
+        
+        <input type="hidden" name="_subject" value="Pendaftaran Baru — Kelas Tauhid 20 Sifat">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://chat.whatsapp.com/K92YpV3Kfnt1fuYjJc4sBY">
+        <input type="text" name="_honey" style="display:none">
+
+        <div class="form-row">
+          <label>Nama Lengkap <span class="required">*</span></label>
+          <input type="text" name="Nama Lengkap" placeholder="Contoh: Ahmad Fauzi" required>
+        </div>
+
+        <div class="form-row">
+          <label>Asal / Instansi</label>
+          <input type="text" name="Asal atau Instansi" placeholder="Contoh: Mahasiswa UIN Jakarta">
+        </div>
+
+        <div class="form-row">
+          <label>Nomor WhatsApp <span class="required">*</span></label>
+          <input type="tel" name="Nomor WhatsApp" placeholder="Contoh: 08123456789" required>
+        </div>
+
+        <div class="form-row">
+          <label>Email</label>
+          <input type="email" name="Email" placeholder="Contoh: nama@email.com">
+        </div>
+
+        <div class="form-row">
+          <label>Motivasi Mengikuti Kelas</label>
+          <textarea name="Motivasi" placeholder="Ceritakan singkat mengapa Anda ingin mengikuti kelas ini..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">
+          <svg class="form-icon" viewBox="0 0 24 24" style="width:20px;height:20px;stroke:white;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Kirim Pendaftaran
+        </button>
+
+        <div class="form-note">
+          🔒 Data Anda aman & hanya digunakan untuk keperluan kelas
+        </div>
+      </form>
+
+      <div class="divider-text">atau</div>
+
+      <a href="https://chat.whatsapp.com/K92YpV3Kfnt1fuYjJc4sBY" class="btn-wa-after" target="_blank">
+        <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Langsung Gabung Komunitas WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="brand">Akademi I'tiqad Ahlussunnah Waljama'ah</div>
+  <p>© 2025 Ilmu Tauhid — 20 Sifat. Semua hak dilindungi.</p>
+  <div class="footer-contact">
+    <a href="https://chat.whatsapp.com/K92YpV3Kfnt1fuYjJc4sBY" class="footer-btn footer-wa" target="_blank">
+      <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Komunitas
+    </a>
+  </div>
+</footer>
+
+<a href="https://chat.whatsapp.com/K92YpV3Kfnt1fuYjJc4sBY" class="float-btn" target="_blank" aria-label="Chat WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('active'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
