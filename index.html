@@ -1,1897 +1,878 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kelas Tauhid 20 Sifat — Akademi I'tiqad Ahlussunnah Waljama'ah</title>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  :root {
-    --green-dark: #1a3d34;
-    --green: #2d5f4f;
-    --green-light: #3d7a64;
-    --gold: #d4a656;
-    --cream: #f8f6f0;
-    --white: #ffffff;
-    --text: #1a3d34;
-    --text-light: #64748b;
-    --text-gray: #94a3b8;
-    --wa: #25d366;
-    --wa-dark: #128c7e;
-    --danger: #ef4444;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Plus Jakarta Sans', -apple-system, system-ui, sans-serif;
-    line-height: 1.6;
-    color: var(--text);
-    background: var(--cream);
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* HERO */
-  .hero {
-    background: var(--green-dark);
-    color: white;
-    padding: 3rem 1.5rem 5rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: 
-      radial-gradient(circle at 20% 30%, rgba(134,239,172,0.08) 0%, transparent 40%),
-      radial-gradient(circle at 80% 70%, rgba(212,166,86,0.06) 0%, transparent 40%);
-    pointer-events: none;
-  }
-
-  .hero-pattern {
-    position: absolute;
-    inset: 0;
-    opacity: 0.04;
-    background-image: 
-      repeating-linear-gradient(45deg, white 0, white 1px, transparent 1px, transparent 20px),
-      repeating-linear-gradient(-45deg, white 0, white 1px, transparent 1px, transparent 20px);
-    pointer-events: none;
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 640px;
-    width: 100%;
-    padding-top: 1rem;
-    animation: fadeIn 0.8s ease;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .hero-badge {
-    display: inline-block;
-    padding: 0.5rem 1.5rem;
-    border: 1.5px solid rgba(255,255,255,0.35);
-    border-radius: 50px;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-    color: white;
-  }
-
-  .hero h1 {
-    font-size: clamp(2rem, 7vw, 3rem);
-    font-weight: 800;
-    line-height: 1.15;
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.02em;
-  }
-
-  .hero h1 .highlight {
-    color: rgba(255,255,255,0.75);
-    font-weight: 700;
-  }
-
-  .hero-desc {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: rgba(255,255,255,0.85);
-    margin-bottom: 2.5rem;
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-title-box {
-    text-align: left;
-    border-left: 3px solid var(--gold);
-    padding-left: 1.25rem;
-    margin: 2rem 0 2.5rem;
-  }
-
-  .hero-title-box h2 {
-    font-size: 1.35rem;
-    font-weight: 800;
-    margin-bottom: 0.5rem;
-    line-height: 1.3;
-  }
-
-  .hero-title-box p {
-    color: rgba(255,255,255,0.7);
-    font-size: 0.95rem;
-  }
-
-  .hero-cta {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-bottom: 3rem;
-  }
-
-  .btn-hero-wa {
-    background: var(--wa);
-    color: white;
-    padding: 1.1rem 2rem;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 1rem;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-    transition: all 0.3s;
-    border: 2px solid var(--wa);
-    box-shadow: 0 10px 25px rgba(37,211,102,0.3);
-  }
-
-  .btn-hero-wa:hover {
-    background: var(--wa-dark);
-    border-color: var(--wa-dark);
-    transform: translateY(-2px);
-  }
-
-  .btn-hero-form {
-    background: var(--gold);
-    color: var(--green-dark);
-    padding: 1.1rem 2rem;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 1rem;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-    transition: all 0.3s;
-    border: 2px solid var(--gold);
-    box-shadow: 0 10px 25px rgba(212,166,86,0.35);
-  }
-
-  .btn-hero-form:hover {
-    background: #c49545;
-    transform: translateY(-2px);
-  }
-
-  .btn-hero-ebook {
-    background: white;
-    color: var(--green-dark);
-    padding: 1.1rem 2rem;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 1rem;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-    transition: all 0.3s;
-    border: 2px solid white;
-    box-shadow: 0 10px 25px rgba(255,255,255,0.2);
-  }
-
-  .btn-hero-ebook:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 35px rgba(255,255,255,0.3);
-  }
-
-  .btn-hero-secondary {
-    background: transparent;
-    color: white;
-    padding: 1.1rem 2rem;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 1rem;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    border: 2px solid rgba(255,255,255,0.4);
-    transition: all 0.3s;
-  }
-
-  .btn-hero-secondary:hover {
-    border-color: white;
-    background: rgba(255,255,255,0.05);
-  }
-
-  .wa-icon {
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
-    flex-shrink: 0;
-  }
-
-  .form-icon {
-    width: 20px;
-    height: 20px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    flex-shrink: 0;
-  }
-
-  /* BOOK HERO */
-  .book-wrap {
-    position: relative;
-    z-index: 1;
-    margin-top: 2rem;
-    perspective: 1000px;
-    animation: floatBook 5s ease-in-out infinite;
-  }
-
-  @keyframes floatBook {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-
-  .book {
-    width: 240px;
-    height: 340px;
-    margin: 0 auto;
-    position: relative;
-    transform: rotateY(-8deg) rotateX(3deg);
-    transform-style: preserve-3d;
-    box-shadow: 
-      -20px 20px 50px rgba(0,0,0,0.4),
-      -5px 5px 20px rgba(0,0,0,0.2);
-  }
-
-  .book-cover {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(160deg, #2d5f4f 0%, #1a3d34 100%);
-    border-radius: 4px 8px 8px 4px;
-    padding: 2rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
-    border-left: 5px solid #0f261f;
-  }
-
-  .book-cover::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 50% 40%, rgba(212,166,86,0.15), transparent 60%);
-    pointer-events: none;
-  }
-
-  .book-top {
-    text-align: center;
-    font-size: 0.6rem;
-    letter-spacing: 0.2em;
-    color: var(--gold);
-    font-weight: 700;
-    text-transform: uppercase;
-    position: relative;
-    z-index: 1;
-  }
-
-  .book-title {
-    text-align: center;
-    position: relative;
-    z-index: 1;
-    margin: 1rem 0;
-  }
-
-  .book-title h3 {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: white;
-    line-height: 1;
-    letter-spacing: -0.02em;
-    margin-bottom: 0.5rem;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-  }
-
-  .book-title .sub {
-    font-size: 0.6rem;
-    color: rgba(255,255,255,0.7);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    line-height: 1.4;
-  }
-
-  .book-bottom {
-    text-align: center;
-    font-size: 0.6rem;
-    color: rgba(255,255,255,0.6);
-    position: relative;
-    z-index: 1;
-  }
-
-  .book-emblem {
-    width: 60px;
-    height: 60px;
-    margin: 0 auto;
-    border: 2px solid var(--gold);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    color: var(--gold);
-    position: relative;
-    z-index: 1;
-  }
-
-  /* SECTION */
-  section {
-    padding: 4rem 1.5rem;
-    max-width: 640px;
-    margin: 0 auto;
-  }
-
-  .section-eyebrow {
-    text-align: center;
-    font-size: 0.7rem;
-    font-weight: 800;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1rem;
-  }
-
-  .section-title {
-    text-align: center;
-    font-size: clamp(1.6rem, 5vw, 2rem);
-    font-weight: 800;
-    line-height: 1.25;
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.02em;
-    color: var(--green-dark);
-  }
-
-  .section-desc {
-    text-align: center;
-    color: var(--text-light);
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: 3rem;
-  }
-
-  /* WHY */
-  .why-section {
-    background: white;
-    max-width: 100%;
-    padding: 4rem 1.5rem;
-  }
-
-  .why-wrap { max-width: 640px; margin: 0 auto; }
-
-  /* FEATURE */
-  .feature-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .feature-item {
-    background: white;
-    padding: 1.75rem 1.5rem;
-    border-radius: 12px;
-    border: 1px solid #e8e4da;
-    transition: all 0.3s;
-  }
-
-  .feature-item:hover {
-    border-color: var(--green-light);
-    box-shadow: 0 10px 30px rgba(45,95,79,0.08);
-  }
-
-  .feature-num {
-    display: inline-block;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    color: var(--gold);
-    margin-bottom: 0.75rem;
-  }
-
-  .feature-item h3 {
-    font-size: 1.15rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: var(--green-dark);
-  }
-
-  .feature-item p {
-    color: var(--text-light);
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-
-  /* CURRICULUM */
-  .curriculum-section {
-    background: var(--cream);
-    max-width: 100%;
-  }
-
-  .curriculum-wrap { max-width: 640px; margin: 0 auto; }
-
-  .bab-card {
-    background: white;
-    border-radius: 16px;
-    padding: 2rem 1.5rem;
-    border: 1px solid #e8e4da;
-  }
-
-  .bab-badge {
-    display: inline-block;
-    font-size: 0.7rem;
-    font-weight: 800;
-    color: var(--green);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    padding: 0.4rem 1rem;
-    background: #e8f3ee;
-    border-radius: 50px;
-  }
-
-  .bab-card h3 {
-    font-size: 1.3rem;
-    font-weight: 800;
-    margin-bottom: 1.5rem;
-    color: var(--green-dark);
-    line-height: 1.3;
-  }
-
-  .bab-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .bab-list li {
-    display: flex;
-    gap: 0.75rem;
-    align-items: flex-start;
-    font-size: 0.95rem;
-    color: var(--text);
-    line-height: 1.5;
-  }
-
-  .bab-list li::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    background: var(--gold);
-    border-radius: 50%;
-    flex-shrink: 0;
-    margin-top: 0.55rem;
-  }
-
-  .swipe-hint {
-    text-align: center;
-    font-size: 0.8rem;
-    color: var(--text-gray);
-    margin-top: 1rem;
-    font-style: italic;
-  }
-
-  /* FACILITIES */
-  .facilities-section {
-    background: white;
-    max-width: 100%;
-    padding: 4rem 1.5rem;
-  }
-
-  .facilities-wrap { max-width: 640px; margin: 0 auto; }
-
-  .facility-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .facility {
-    background: var(--cream);
-    padding: 1rem 1.25rem;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 0.85rem;
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--green-dark);
-    transition: all 0.3s;
-  }
-
-  .facility:hover {
-    background: #e8f3ee;
-    transform: translateX(3px);
-  }
-
-  .facility-check {
-    width: 22px;
-    height: 22px;
-    background: var(--green);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 0.7rem;
-    font-weight: 800;
-    flex-shrink: 0;
-  }
-
-  /* EBOOK SECTION */
-  .ebook-section {
-    background: linear-gradient(180deg, #0f261f 0%, #1a3d34 100%);
-    color: white;
-    max-width: 100%;
-    padding: 5rem 1.5rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .ebook-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 20% 30%, rgba(212,166,86,0.1) 0%, transparent 50%);
-    pointer-events: none;
-  }
-
-  .ebook-wrap {
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-  }
-
-  .ebook-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-    align-items: center;
-  }
-
-  .ebook-visual {
-    display: flex;
-    justify-content: center;
-    perspective: 1000px;
-  }
-
-  .ebook-book {
-    width: 200px;
-    height: 280px;
-    position: relative;
-    transform: rotateY(-15deg) rotateX(3deg);
-    transform-style: preserve-3d;
-    box-shadow: 
-      -15px 15px 40px rgba(0,0,0,0.5),
-      -3px 3px 15px rgba(0,0,0,0.3);
-    animation: floatBookEbook 5s ease-in-out infinite;
-  }
-
-  @keyframes floatBookEbook {
-    0%, 100% { transform: rotateY(-15deg) rotateX(3deg) translateY(0); }
-    50% { transform: rotateY(-15deg) rotateX(3deg) translateY(-8px); }
-  }
-
-  .ebook-book-cover {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(160deg, #d4a656 0%, #8b6b2c 100%);
-    border-radius: 4px 8px 8px 4px;
-    padding: 1.5rem 1.2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
-    border-left: 4px solid #6b501f;
-  }
-
-  .ebook-book-cover::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 50% 40%, rgba(255,255,255,0.15), transparent 60%);
-  }
-
-  .ebook-cover-top {
-    text-align: center;
-    font-size: 0.55rem;
-    letter-spacing: 0.2em;
-    color: rgba(255,255,255,0.9);
-    font-weight: 700;
-    text-transform: uppercase;
-    position: relative;
-    z-index: 1;
-  }
-
-  .ebook-cover-title {
-    text-align: center;
-    position: relative;
-    z-index: 1;
-    color: #0f261f;
-  }
-
-  .ebook-cover-title h3 {
-    font-size: 1.4rem;
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 0.4rem;
-    letter-spacing: -0.02em;
-  }
-
-  .ebook-cover-title .sub {
-    font-size: 0.55rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: rgba(15,38,31,0.7);
-  }
-
-  .ebook-cover-emoji {
-    width: 50px;
-    height: 50px;
-    margin: 0 auto 0.75rem;
-    border: 2px solid #0f261f;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3rem;
-  }
-
-  .ebook-cover-bottom {
-    text-align: center;
-    font-size: 0.55rem;
-    color: rgba(15,38,31,0.7);
-    position: relative;
-    z-index: 1;
-  }
-
-  .ebook-info h2 {
-    font-size: clamp(1.6rem, 5vw, 2rem);
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    letter-spacing: -0.02em;
-  }
-
-  .ebook-info h2 .gold {
-    color: var(--gold);
-  }
-
-  .ebook-info > p {
-    color: rgba(255,255,255,0.75);
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-  }
-
-  .ebook-features {
-    list-style: none;
-    margin-bottom: 2rem;
-  }
-
-  .ebook-features li {
-    padding: 0.5rem 0;
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    font-size: 0.95rem;
-    color: rgba(255,255,255,0.9);
-  }
-
-  .ebook-features li::before {
-    content: '✓';
-    color: var(--gold);
-    font-weight: 800;
-    flex-shrink: 0;
-  }
-
-  .ebook-price-box {
-    background: rgba(255,255,255,0.06);
-    border: 2px solid rgba(212,166,86,0.3);
-    border-radius: 16px;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .ebook-price-label {
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.5rem;
-  }
-
-  .ebook-price-value {
-    font-size: 2.2rem;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    margin-bottom: 0.25rem;
-    line-height: 1;
-  }
-
-  .ebook-price-value span {
-    font-size: 1rem;
-    font-weight: 500;
-    color: rgba(255,255,255,0.6);
-    letter-spacing: 0;
-  }
-
-  .ebook-price-note {
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.6);
-  }
-
-  .btn-beli-ebook {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-    width: 100%;
-    padding: 1.2rem;
-    background: linear-gradient(135deg, var(--gold), #c49545);
-    color: #0f261f;
-    border: none;
-    border-radius: 12px;
-    font-size: 1.05rem;
-    font-weight: 800;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-family: inherit;
-    box-shadow: 0 15px 35px rgba(212,166,86,0.4);
-  }
-
-  .btn-beli-ebook:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 20px 45px rgba(212,166,86,0.5);
-  }
-
-  .btn-beli-ebook svg {
-    width: 22px;
-    height: 22px;
-    fill: #0f261f;
-  }
-
-  .ebook-trust {
-    display: flex;
-    justify-content: center;
-    gap: 1.25rem;
-    margin-top: 1rem;
-    flex-wrap: wrap;
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.6);
-  }
-
-  .ebook-trust span {
-    display: flex;
-    align-items: center;
-    gap: 0.35rem;
-  }
-
-  /* INSTRUCTOR */
-  .instructor-section {
-    background: var(--cream);
-    max-width: 100%;
-  }
-
-  .instructor-wrap { max-width: 640px; margin: 0 auto; }
-
-  .instructor-card {
-    background: white;
-    border-radius: 16px;
-    padding: 2rem 1.5rem;
-    text-align: center;
-    border: 1px solid #e8e4da;
-    transition: all 0.3s;
-  }
-
-  .instructor-card:hover {
-    box-shadow: 0 15px 40px rgba(45,95,79,0.08);
-  }
-
-  .instructor-avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: #e8f3ee;
-    margin: 0 auto 1.25rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.75rem;
-    color: var(--green);
-    font-weight: 800;
-  }
-
-  .instructor-role {
-    font-size: 0.7rem;
-    font-weight: 800;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.5rem;
-  }
-
-  .instructor-card h3 {
-    font-size: 1.2rem;
-    font-weight: 800;
-    margin-bottom: 0.5rem;
-    color: var(--green-dark);
-  }
-
-  .instructor-card .title {
-    font-size: 0.9rem;
-    color: var(--text-light);
-    margin-bottom: 1rem;
-  }
-
-  .instructor-badge {
-    display: inline-block;
-    padding: 0.4rem 1rem;
-    background: #e8f3ee;
-    color: var(--green);
-    border-radius: 50px;
-    font-size: 0.75rem;
-    font-weight: 700;
-  }
-
-  /* AUDIENCE */
-  .audience-section {
-    background: white;
-    max-width: 100%;
-    padding: 4rem 1.5rem;
-  }
-
-  .audience-wrap { max-width: 640px; margin: 0 auto; }
-
-  .audience-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .audience-item {
-    padding: 1.5rem;
-    background: var(--cream);
-    border-radius: 12px;
-    border-left: 3px solid var(--gold);
-  }
-
-  .audience-item h4 {
-    font-size: 1.05rem;
-    font-weight: 800;
-    margin-bottom: 0.4rem;
-    color: var(--green-dark);
-  }
-
-  .audience-item p {
-    color: var(--text-light);
-    font-size: 0.9rem;
-  }
-
-  /* CHECKOUT SECTION */
-  .checkout-section {
-    background: linear-gradient(180deg, #f8f6f0 0%, #ffffff 100%);
-    max-width: 100%;
-    padding: 5rem 1.5rem;
-  }
-
-  .checkout-wrap { max-width: 640px; margin: 0 auto; }
-
-  .checkout-card {
-    background: white;
-    border-radius: 20px;
-    padding: 2rem 1.5rem;
-    border: 2px solid #e8e4da;
-    box-shadow: 0 20px 60px rgba(26,61,52,0.08);
-  }
-
-  .nominal-title {
-    text-align: center;
-    font-size: 1.15rem;
-    font-weight: 800;
-    color: var(--green-dark);
-    margin-bottom: 1.5rem;
-  }
-
-  .nominal-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.6rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .nominal-btn {
-    background: white;
-    border: 2px solid #e8e4da;
-    border-radius: 10px;
-    padding: 0.85rem 0.5rem;
-    font-family: inherit;
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: var(--green-dark);
-    cursor: pointer;
-    transition: all 0.2s;
-    position: relative;
-  }
-
-  .nominal-btn:hover {
-    border-color: var(--green);
-  }
-
-  .nominal-btn.active {
-    background: var(--green-dark);
-    border-color: var(--green-dark);
-    color: white;
-    transform: scale(1.02);
-    box-shadow: 0 8px 20px rgba(26,61,52,0.25);
-  }
-
-  .nominal-btn.active::after {
-    content: '★';
-    position: absolute;
-    top: 4px;
-    right: 6px;
-    font-size: 0.7rem;
-    color: var(--gold);
-  }
-
-  .nominal-note {
-    text-align: center;
-    font-size: 0.8rem;
-    color: var(--text-gray);
-    margin-bottom: 1.75rem;
-    font-style: italic;
-  }
-
-  .custom-amount {
-    background: var(--cream);
-    border-radius: 12px;
-    padding: 1.25rem;
-    margin-bottom: 1.5rem;
-    border: 2px dashed #d4c9b3;
-  }
-
-  .custom-amount label {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--green-dark);
-    margin-bottom: 0.5rem;
-  }
-
-  .custom-input-wrap {
-    display: flex;
-    align-items: center;
-    background: white;
-    border: 2px solid #e8e4da;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.3s;
-  }
-
-  .custom-input-wrap:focus-within {
-    border-color: var(--green);
-    box-shadow: 0 0 0 4px rgba(45,95,79,0.08);
-  }
-
-  .currency-prefix {
-    background: var(--green-dark);
-    color: white;
-    padding: 0.85rem 1rem;
-    font-weight: 800;
-    font-size: 0.95rem;
-  }
-
-  .custom-input-wrap input {
-    flex: 1;
-    border: none;
-    padding: 0.85rem 1rem;
-    font-size: 1rem;
-    font-family: inherit;
-    font-weight: 700;
-    color: var(--green-dark);
-    background: transparent;
-    text-align: right;
-    outline: none;
-  }
-
-  .custom-input-wrap input::placeholder {
-    font-weight: 400;
-    color: var(--text-gray);
-    text-align: left;
-  }
-
-  .checkout-summary {
-    background: linear-gradient(135deg, rgba(212,166,86,0.1), rgba(212,166,86,0.05));
-    border: 2px solid var(--gold);
-    border-radius: 12px;
-    padding: 1rem 1.25rem;
-    margin-bottom: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .checkout-summary-label {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--green-dark);
-  }
-
-  .checkout-summary-value {
-    font-size: 1.3rem;
-    font-weight: 800;
-    color: var(--green-dark);
-    letter-spacing: -0.02em;
-  }
-
-  .checkout-divider {
-    height: 1px;
-    background: #e8e4da;
-    margin: 1.5rem 0;
-  }
-
-  .btn-checkout {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-    width: 100%;
-    padding: 1.2rem;
-    background: linear-gradient(135deg, var(--green-dark), var(--green));
-    color: white;
-    border: none;
-    border-radius: 12px;
-    font-size: 1.05rem;
-    font-weight: 800;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-family: inherit;
-    box-shadow: 0 15px 35px rgba(26,61,52,0.3);
-    margin-top: 1rem;
-  }
-
-  .btn-checkout:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 20px 45px rgba(26,61,52,0.4);
-  }
-
-  .btn-checkout svg {
-    width: 22px;
-    height: 22px;
-    fill: white;
-  }
-
-  .checkout-secure {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 1rem;
-    font-size: 0.8rem;
-    color: var(--text-gray);
-  }
-
-  /* FORM SECTION */
-  .form-section {
-    background: var(--cream);
-    max-width: 100%;
-    padding: 4rem 1.5rem 5rem;
-  }
-
-  .form-wrap { max-width: 640px; margin: 0 auto; }
-
-  .form-card {
-    background: white;
-    border-radius: 20px;
-    padding: 2.5rem 1.75rem;
-    border: 2px solid #e8e4da;
-    box-shadow: 0 20px 60px rgba(26,61,52,0.06);
-  }
-
-  .form-row {
-    margin-bottom: 1.25rem;
-  }
-
-  .form-row label {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--green-dark);
-    margin-bottom: 0.5rem;
-  }
-
-  .form-row label .required {
-    color: var(--danger);
-  }
-
-  .form-row input,
-  .form-row textarea {
-    width: 100%;
-    padding: 0.9rem 1rem;
-    border: 2px solid #e8e4da;
-    border-radius: 10px;
-    font-size: 0.95rem;
-    font-family: inherit;
-    color: var(--text);
-    background: var(--cream);
-    transition: all 0.3s;
-    -webkit-appearance: none;
-  }
-
-  .form-row input:focus,
-  .form-row textarea:focus {
-    outline: none;
-    border-color: var(--green);
-    background: white;
-    box-shadow: 0 0 0 4px rgba(45,95,79,0.08);
-  }
-
-  .form-row textarea {
-    resize: vertical;
-    min-height: 100px;
-  }
-
-  .form-row input::placeholder,
-  .form-row textarea::placeholder {
-    color: var(--text-gray);
-  }
-
-  .btn-submit {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-    width: 100%;
-    padding: 1.15rem;
-    background: var(--green-dark);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-family: inherit;
-    margin-top: 0.5rem;
-    box-shadow: 0 10px 25px rgba(26,61,52,0.25);
-  }
-
-  .btn-submit:hover {
-    background: var(--green);
-    transform: translateY(-2px);
-  }
-
-  .form-note {
-    text-align: center;
-    font-size: 0.8rem;
-    color: var(--text-gray);
-    margin-top: 1rem;
-  }
-
-  .btn-wa-after {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-    width: 100%;
-    padding: 1.1rem;
-    background: var(--wa);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 0.95rem;
-    font-weight: 700;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-family: inherit;
-    margin-top: 1.5rem;
-    box-shadow: 0 10px 25px rgba(37,211,102,0.3);
-  }
-
-  .btn-wa-after:hover {
-    background: var(--wa-dark);
-    transform: translateY(-2px);
-  }
-
-  .divider-text {
-    text-align: center;
-    color: var(--text-gray);
-    font-size: 0.8rem;
-    margin: 1.5rem 0 0;
-    position: relative;
-  }
-
-  .divider-text::before,
-  .divider-text::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 35%;
-    height: 1px;
-    background: #e8e4da;
-  }
-
-  .divider-text::before { left: 0; }
-  .divider-text::after { right: 0; }
-
-  /* FLOAT WA */
-  .float-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    background: var(--wa);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-decoration: none;
-    z-index: 999;
-    transition: all 0.3s;
-    animation: pulseWa 2s infinite;
-  }
-
-  .float-btn:hover {
-    background: var(--wa-dark);
-    transform: scale(1.1);
-  }
-
-  .float-btn svg {
-    width: 32px;
-    height: 32px;
-    fill: white;
-  }
-
-  @keyframes pulseWa {
-    0%, 100% { box-shadow: 0 10px 30px rgba(37,211,102,0.5), 0 0 0 0 rgba(37,211,102,0.7); }
-    50% { box-shadow: 0 10px 30px rgba(37,211,102,0.5), 0 0 0 15px rgba(37,211,102,0); }
-  }
-
-  /* FOOTER */
-  footer {
-    background: var(--green-dark);
-    color: rgba(255,255,255,0.7);
-    text-align: center;
-    padding: 2.5rem 1.5rem;
-    font-size: 0.85rem;
-  }
-
-  footer .brand {
-    color: white;
-    font-weight: 800;
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    line-height: 1.4;
-  }
-
-  .footer-contact {
-    display: flex;
-    justify-content: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    margin-top: 1rem;
-  }
-
-  footer .footer-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-    font-weight: 600;
-    padding: 0.6rem 1.25rem;
-    border-radius: 50px;
-    transition: all 0.3s;
-    font-size: 0.85rem;
-  }
-
-  footer .footer-wa {
-    color: var(--wa);
-    border: 1.5px solid var(--wa);
-  }
-
-  footer .footer-wa:hover {
-    background: var(--wa);
-    color: white;
-  }
-
-  /* REVEAL */
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  @media (min-width: 768px) {
-    section { padding: 5rem 2rem; }
-    .hero { padding: 5rem 2rem 6rem; }
-    .form-section { padding: 5rem 2rem 6rem; }
-    .checkout-section { padding: 6rem 2rem; }
-    .ebook-section { padding: 6rem 2rem; }
-    .ebook-grid {
-      grid-template-columns: 280px 1fr;
-      gap: 4rem;
-    }
-    .ebook-book {
-      width: 240px;
-      height: 340px;
-    }
-    .ebook-cover-title h3 {
-      font-size: 1.7rem;
-    }
-  }
-
-  @media (max-width: 380px) {
-    .hero h1 { font-size: 1.75rem; }
-    .book { width: 200px; height: 290px; }
-    .book-title h3 { font-size: 1.5rem; }
-    .float-btn { width: 54px; height: 54px; }
-    .float-btn svg { width: 28px; height: 28px; }
-    .form-card { padding: 2rem 1.25rem; }
-    .ebook-book {
-      width: 170px;
-      height: 240px;
-    }
-    .ebook-cover-title h3 {
-      font-size: 1.2rem;
-    }
-    .nominal-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .nominal-btn {
-      font-size: 0.85rem;
-      padding: 0.75rem 0.4rem;
-    }
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudahkah Anda Mengenal Allah dengan Benar? - Kelas Tauhid Aswaja</title>
+    <meta name="description" content="50 i'tiqad yang wajib diketahui setiap muslim. Bangun pondasi iman Anda dengan kelas Tauhid Aswaja.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .bg-dark-green { background-color: #1A4031; }
+        .text-dark-green { color: #1A4031; }
+        .border-dark-green { border-color: #1A4031; }
+        .bg-cream { background-color: #F9F6F0; }
+        .bg-light-green { background-color: #E8F5E9; }
+        .text-gold { color: #D4AF37; }
+        .border-gold { border-color: #D4AF37; }
+        .bg-gold { background-color: #D4AF37; }
+        
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; margin: 0; 
+        }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] .arrow { transform: rotate(180deg); }
+        .btn-nominal.active { background-color: #E8F5E9; border-color: #1A4031; color: #1A4031; font-weight: bold; }
+
+        @keyframes floatBook {
+            0%, 100% { transform: translateY(0px) rotate(-1deg); }
+            50% { transform: translateY(-12px) rotate(-1deg); }
+        }
+        .animate-book { animation: floatBook 5s ease-in-out infinite; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .wa-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 9999;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25), 0 0 0 0 rgba(37, 211, 102, 0.7);
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            animation: waPulse 2s infinite;
+        }
+        .wa-float:hover { transform: scale(1.1); }
+        .wa-float svg { width: 38px; height: 38px; fill: white; }
+
+        @keyframes waPulse {
+            0% { box-shadow: 0 4px 12px rgba(0,0,0,0.25), 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 4px 12px rgba(0,0,0,0.25), 0 0 0 16px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 4px 12px rgba(0,0,0,0.25), 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        .wa-float::before {
+            content: 'Gabung Grup WA';
+            position: absolute;
+            right: 74px;
+            background: #1A4031;
+            color: #D4AF37;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 6px 12px;
+            border-radius: 6px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .wa-float:hover::before { opacity: 1; }
+
+        /* Highlight untuk kata penting */
+        .highlight {
+            background: linear-gradient(180deg, transparent 60%, rgba(212,175,55,0.4) 60%);
+            padding: 0 2px;
+            font-weight: bold;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-cream font-sans text-gray-800 antialiased">
 
-<!-- ===== HERO ===== -->
-<div class="hero">
-  <div class="hero-pattern"></div>
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://chat.whatsapp.com/K92YpV3Kfnt1fuYjJc4sBY" 
+       target="_blank" rel="noopener" id="waFloat" class="wa-float" title="Gabung Grup WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
 
-  <div class="hero-content">
-    <div class="hero-badge">Akademi I'tiqad Aswaja</div>
+    <!-- ==================== LANDING PAGE ==================== -->
+    <div id="landing-page">
+        
+        <!-- HERO SECTION -->
+        <header class="bg-dark-green text-white pt-10 pb-16 px-4 text-center rounded-b-3xl shadow-lg">
+            <div class="max-w-md mx-auto">
+                <span class="border border-gold text-gold px-4 py-1 rounded-full text-xs font-semibold tracking-wide inline-block mb-6">
+                    ✦ KELAS TAUHID ASWAJA ✦
+                </span>
+                <h1 class="text-3xl font-bold leading-tight mb-3">Sudahkah Anda Mengenal Allah dengan Benar?</h1>
+                <p class="text-sm text-gray-200 mb-8 opacity-90">50 i'tiqad yang wajib diketahui setiap muslim — <strong class="text-gold">sudahkah Anda menghafalnya?</strong></p>
+                
+                <div class="space-y-3">
+                    <button onclick="showDaftar()" class="w-full bg-white text-dark-green font-bold py-3 rounded-lg shadow-md hover:bg-gray-100 transition">
+                        🚀 Mulai Belajar Sekarang
+                    </button>
+                    <a href="#kurikulum" class="block w-full border border-white text-white font-bold py-3 rounded-lg hover:bg-white hover:text-dark-green transition text-center">
+                        📖 Lihat 50 I'tiqad
+                    </a>
+                </div>
 
-    <h1>
-      Kelas Tauhid<br>
-      <span class="highlight">20 Sifat</span>
-    </h1>
-
-    <p class="hero-desc">
-      Mempelajari 20 Sifat wajib bagi Allah secara bertahap, terstruktur, dan mudah diikuti bagi pelajar, santri, mahasiswa, maupun umum.
-    </p>
-
-    <div class="hero-title-box">
-      <h2>I'tiqad Ahlussunnah Waljama'ah</h2>
-      <p>Panduan mengenal Allah melalui 20 Sifat</p>
-    </div>
-
-    <div class="hero-cta">
-      <a href="#checkout" class="btn-hero-form">
-        <svg class="form-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        Daftar Kelas Sekarang
-      </a>
-      <a href="#ebook" class="btn-hero-ebook">
-        📖 Beli Ebook
-      </a>
-      <a href="https://chat.whatsapp.com/K92YpV3Kfnt1fuYjJc4sBY" class="btn-hero-wa" target="_blank">
-        <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Gabung Komunitas Aswaja
-      </a>
-      <a href="#kurikulum" class="btn-hero-secondary">Lihat Materi</a>
-    </div>
-  </div>
-
-  <div class="book-wrap">
-    <div class="book">
-      <div class="book-cover">
-        <div class="book-top">Ilmu Tauhid</div>
-        <div class="book-title">
-          <div class="book-emblem">☪</div>
-          <h3>20 SIFAT</h3>
-          <div class="sub">Akademi I'tiqad Aswaja</div>
-        </div>
-        <div class="book-bottom">Edisi 2025</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== WHY ===== -->
-<div class="why-section">
-  <div class="why-wrap">
-    <div class="reveal">
-      <div class="section-eyebrow">Mengapa Pembelajaran Ini?</div>
-      <h2 class="section-title">Mengenal Allah adalah pondasi utama seorang hamba.</h2>
-      <p class="section-desc">
-        Memahami 20 Sifat wajib bagi Allah merupakan dasar ilmu tauhid yang harus diketahui setiap Muslim. Dengan mengenal Allah melalui sifat-sifat-Nya, seorang hamba akan semakin dekat dan mengenal Tuhannya.
-        <br><br>
-        Kelas Ilmu Tauhid ini disusun untuk membantu peserta memahami 20 Sifat Allah secara bertahap, mudah, dan terstruktur sesuai pemahaman Ahlussunnah Waljama'ah.
-      </p>
-    </div>
-  </div>
-</div>
-
-<!-- ===== TENTANG ===== -->
-<section>
-  <div class="reveal">
-    <div class="section-eyebrow">Tentang Pembelajaran</div>
-    <h2 class="section-title">20 Sifat yang disusun secara sistematis</h2>
-    <p class="section-desc">
-      Bukan sekadar hafalan. Peserta akan memahami makna setiap sifat, dalil-dalilnya, serta penerapannya dalam kehidupan sehari-hari.
-    </p>
-  </div>
-
-  <div class="feature-list">
-    <div class="feature-item reveal">
-      <div class="feature-num">01</div>
-      <h3>Terstruktur</h3>
-      <p>Materi disusun dengan urutan yang jelas dan saling berkesinambungan.</p>
-    </div>
-    <div class="feature-item reveal">
-      <div class="feature-num">02</div>
-      <h3>Komprehensif</h3>
-      <p>Mencakup seluruh 20 Sifat wajib Allah beserta penjelasan dan dalilnya.</p>
-    </div>
-    <div class="feature-item reveal">
-      <div class="feature-num">03</div>
-      <h3>Dapat Dipelajari Bertahap</h3>
-      <p>Peserta dapat mengikuti materi secara bertahap sesuai kemampuan masing-masing.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===== KURIKULUM ===== -->
-<div class="curriculum-section" id="kurikulum">
-  <div class="curriculum-wrap">
-    <div class="reveal" style="padding: 4rem 0 2rem;">
-      <div class="section-eyebrow">Daftar Materi</div>
-      <h2 class="section-title">Apa saja yang akan dipelajari?</h2>
-      <p class="section-desc">
-        Berikut gambaran materi dalam Kelas Ilmu Tauhid — 20 Sifat
-      </p>
-    </div>
-
-    <div class="bab-card reveal">
-      <div class="bab-badge">01 — 20 Sifat Wajib Allah</div>
-      <h3>Mengenal Allah Melalui 20 Sifat</h3>
-      <ul class="bab-list">
-        <li>Wujud — Allah itu Ada</li>
-        <li>Qidam — Allah itu Dahulu</li>
-        <li>Baqa' — Allah itu Kekal</li>
-        <li>Mukhalafatu lil hawaditsi — Allah Berbeda dengan Makhluk</li>
-        <li>Qiyamuhu binafsihi — Allah Berdiri Sendiri</li>
-      </ul>
-    </div>
-
-    <p class="swipe-hint">— Masih ada 15 sifat lainnya yang akan dibahas —</p>
-  </div>
-</div>
-
-<!-- ===== FASILITAS ===== -->
-<div class="facilities-section">
-  <div class="facilities-wrap">
-    <div class="reveal">
-      <div class="section-eyebrow">Fasilitas</div>
-      <h2 class="section-title">Apa Saja yang Akan Anda Dapatkan?</h2>
-      <p class="section-desc">
-        Dengan mengikuti kelas ini, Anda akan mendapatkan:
-      </p>
-    </div>
-
-    <div class="facility-list">
-      <div class="facility reveal"><div class="facility-check">✓</div><span>Akses Materi Selamanya (Lifetime)</span></div>
-      <div class="facility reveal"><div class="facility-check">✓</div><span>Kurikulum Belajar Terstruktur</span></div>
-      <div class="facility reveal"><div class="facility-check">✓</div><span>Pembahasan 20 Sifat Wajib Allah</span></div>
-      <div class="facility reveal"><div class="facility-check">✓</div><span>Dalil-dalil dari Al-Qur'an dan Hadits</span></div>
-      <div class="facility reveal"><div class="facility-check">✓</div><span>Evaluasi Progres Belajar</span></div>
-      <div class="facility reveal"><div class="facility-check">✓</div><span>Ujian Akhir Komprehensif</span></div>
-      <div class="facility reveal"><div class="facility-check">✓</div><span>Grup Diskusi Interaktif</span></div>
-      <div class="facility reveal"><div class="facility-check">✓</div><span>E-Book Materi Pembelajaran</span></div>
-      <div class="facility reveal"><div class="facility-check">✓</div><span>Sertifikat Kelulusan</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== EBOOK ===== -->
-<div class="ebook-section" id="ebook">
-  <div class="ebook-wrap">
-    <div class="ebook-grid">
-      <div class="ebook-visual">
-        <div class="ebook-book">
-          <div class="ebook-book-cover">
-            <div class="ebook-cover-top">Ebook Eksklusif</div>
-            <div class="ebook-cover-title">
-              <div class="ebook-cover-emoji">📖</div>
-              <h3>Panduan<br>Tauhid</h3>
-              <div class="sub">Untuk Pemula</div>
+                <!-- COVER KITAB -->
+                <div class="mt-12 relative flex justify-center">
+                    <div class="w-64 animate-book drop-shadow-2xl">
+                        <svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto rounded-xl overflow-hidden" style="box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 3px #D4AF37, 0 0 0 6px #0F2F3D, 0 0 0 8px #D4AF37;">
+                            <defs>
+                                <linearGradient id="bgDark" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#0F2F3D"/>
+                                    <stop offset="50%" stop-color="#0A1F29"/>
+                                    <stop offset="100%" stop-color="#05141B"/>
+                                </linearGradient>
+                                <linearGradient id="gold" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#FFF3C4"/>
+                                    <stop offset="25%" stop-color="#F5D77A"/>
+                                    <stop offset="50%" stop-color="#D4AF37"/>
+                                    <stop offset="75%" stop-color="#B8901E"/>
+                                    <stop offset="100%" stop-color="#8B6B14"/>
+                                </linearGradient>
+                                <linearGradient id="goldLight" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#FFFAE0"/>
+                                    <stop offset="50%" stop-color="#F5D77A"/>
+                                    <stop offset="100%" stop-color="#D4AF37"/>
+                                </linearGradient>
+                                <radialGradient id="shine" cx="50%" cy="30%" r="60%">
+                                    <stop offset="0%" stop-color="#F5D77A" stop-opacity="0.15"/>
+                                    <stop offset="100%" stop-color="#F5D77A" stop-opacity="0"/>
+                                </radialGradient>
+                            </defs>
+                            <rect width="400" height="600" fill="url(#bgDark)"/>
+                            <rect width="400" height="600" fill="url(#shine)"/>
+                            <rect x="14" y="14" width="372" height="572" fill="none" stroke="url(#gold)" stroke-width="1.5" rx="6"/>
+                            <rect x="22" y="22" width="356" height="556" fill="none" stroke="url(#gold)" stroke-width="0.5" rx="4" opacity="0.7"/>
+                            <g stroke="url(#gold)" fill="none" stroke-width="1" opacity="0.95">
+                                <path d="M 30 30 Q 80 30 100 60 Q 80 90 40 80 Q 30 70 45 55 Q 70 55 80 70"/>
+                                <path d="M 50 45 Q 65 50 70 65"/>
+                                <path d="M 90 50 Q 100 55 95 65 Q 85 60 90 50 Z" fill="url(#gold)"/>
+                                <circle cx="110" cy="45" r="2.5" fill="url(#gold)"/>
+                                <circle cx="120" cy="60" r="1.5" fill="url(#gold)"/>
+                                <path d="M 30 100 Q 60 100 80 110"/>
+                            </g>
+                            <g stroke="url(#gold)" fill="none" stroke-width="1" opacity="0.95">
+                                <path d="M 370 30 Q 320 30 300 60 Q 320 90 360 80 Q 370 70 355 55 Q 330 55 320 70"/>
+                                <path d="M 310 50 Q 300 55 305 65 Q 315 60 310 50 Z" fill="url(#gold)"/>
+                                <circle cx="290" cy="45" r="2.5" fill="url(#gold)"/>
+                                <path d="M 370 100 Q 340 100 320 110"/>
+                            </g>
+                            <g stroke="url(#gold)" fill="none" stroke-width="1" opacity="0.85">
+                                <path d="M 30 570 Q 80 570 100 540 Q 80 510 40 520 Q 30 530 45 545 Q 70 545 80 530"/>
+                                <path d="M 90 550 Q 100 545 95 535 Q 85 540 90 550 Z" fill="url(#gold)"/>
+                                <circle cx="110" cy="555" r="2.5" fill="url(#gold)"/>
+                            </g>
+                            <g stroke="url(#gold)" fill="none" stroke-width="1" opacity="0.85">
+                                <path d="M 370 570 Q 320 570 300 540 Q 320 510 360 520 Q 370 530 355 545 Q 330 545 320 530"/>
+                                <path d="M 310 550 Q 300 545 305 535 Q 315 540 310 550 Z" fill="url(#gold)"/>
+                                <circle cx="290" cy="555" r="2.5" fill="url(#gold)"/>
+                            </g>
+                            <circle cx="200" cy="160" r="58" fill="none" stroke="url(#gold)" stroke-width="1.5"/>
+                            <circle cx="200" cy="160" r="53" fill="none" stroke="url(#gold)" stroke-width="0.5" opacity="0.6"/>
+                            <text x="200" y="178" font-family="serif" font-size="52" fill="url(#goldLight)" text-anchor="middle" font-weight="bold">ﷲ</text>
+                            <line x1="80" y1="255" x2="320" y2="255" stroke="url(#gold)" stroke-width="0.5" opacity="0.6"/>
+                            <circle cx="200" cy="255" r="3" fill="url(#gold)"/>
+                            <text x="200" y="305" font-family="Georgia, serif" font-size="62" font-weight="bold" fill="url(#goldLight)" text-anchor="middle" letter-spacing="6">TAUHID</text>
+                            <line x1="130" y1="320" x2="270" y2="320" stroke="url(#gold)" stroke-width="0.5"/>
+                            <text x="200" y="375" font-family="Georgia, serif" font-size="66" font-weight="bold" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">ASWAJA</text>
+                            <line x1="100" y1="395" x2="300" y2="395" stroke="url(#gold)" stroke-width="0.8"/>
+                            <circle cx="200" cy="395" r="3" fill="url(#gold)"/>
+                            <text x="200" y="425" font-family="Georgia, serif" font-size="17" font-weight="bold" fill="url(#goldLight)" text-anchor="middle">50 Itikad yang Wajib Diketahui</text>
+                            <text x="200" y="443" font-family="Georgia, serif" font-size="9" fill="url(#gold)" text-anchor="middle" letter-spacing="4" opacity="0.8">— TAUHID ASWAJA —</text>
+                            <text x="80" y="470" font-size="16" fill="url(#gold)">☪</text>
+                            <g fill="url(#gold)" opacity="0.9">
+                                <rect x="62" y="475" width="18" height="85"/>
+                                <path d="M 62 475 Q 71 455 80 475 Z"/>
+                                <circle cx="71" cy="453" r="3"/>
+                                <line x1="71" y1="450" x2="71" y2="442" stroke="url(#gold)" stroke-width="1"/>
+                                <rect x="320" y="475" width="18" height="85"/>
+                                <path d="M 320 475 Q 329 455 338 475 Z"/>
+                                <circle cx="329" cy="453" r="3"/>
+                                <line x1="329" y1="450" x2="329" y2="442" stroke="url(#gold)" stroke-width="1"/>
+                                <rect x="130" y="500" width="140" height="60"/>
+                                <path d="M 145 500 Q 145 445 200 435 Q 255 445 255 500 Z"/>
+                                <circle cx="200" cy="428" r="2.5"/>
+                                <line x1="200" y1="426" x2="200" y2="418" stroke="url(#gold)" stroke-width="1"/>
+                                <path d="M 110 500 Q 110 478 128 475 Q 146 478 146 500 Z"/>
+                                <rect x="105" y="500" width="46" height="45"/>
+                                <path d="M 254 500 Q 254 478 272 475 Q 290 478 290 500 Z"/>
+                                <rect x="249" y="500" width="46" height="45"/>
+                                <path d="M 185 560 L 185 525 Q 200 510 215 525 L 215 560 Z" fill="#0A1F29"/>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
             </div>
-            <div class="ebook-cover-bottom">Akademi I'tiqad</div>
-          </div>
-        </div>
-      </div>
+        </header>
 
-      <div class="ebook-info">
-        <h2>Ebook <span class="gold">Panduan Tauhid</span> untuk Pemula</h2>
-        <p>
-          Pelajari dasar-dasar ilmu tauhid secara praktis dan mudah dipahami. Cocok untuk pemula yang ingin mengenal Allah melalui 20 Sifat-Nya.
-        </p>
+        <!-- INTRO SECTION dengan HOOK EMOSIONAL -->
+        <section class="py-12 px-6 text-center max-w-lg mx-auto reveal">
+            <span class="text-gold text-xs font-bold tracking-widest uppercase">Mengapa Pembelajaran Ini?</span>
+            <h2 class="text-2xl font-bold text-dark-green mt-2 mb-4">Banyak yang sholat, tapi belum kenal siapa yang disembah.</h2>
+            <p class="text-sm text-gray-600 leading-relaxed">
+                Kalau ditanya <span class="highlight">"Siapa Allah?"</span>, apakah Anda bisa menjawab dengan yakin? Padahal, inilah <strong class="text-dark-green">fondasi utama</strong> yang akan ditanya pertama kali di alam kubur.
+                <br><br>
+                Setiap hari kita diserang pemikiran yang mengaburkan akidah. Tanpa pondasi tauhid yang kokoh, <span class="highlight">iman bisa goyah</span>. Yuk, kokohkan akidah Anda dengan 50 i'tiqad yang wajib diketahui setiap muslim yang sudah baligh dan berakal sehat.
+            </p>
+        </section>
 
-        <ul class="ebook-features">
-          <li>Penjelasan lengkap 20 Sifat Wajib Allah</li>
-          <li>Dalil-dalil dari Al-Qur'an dan Hadits</li>
-          <li>Bahasa sederhana, mudah dipahami pemula</li>
-          <li>Format PDF — bisa dibaca di HP & laptop</li>
-          <li>Akses seumur hidup + update gratis</li>
-        </ul>
+        <!-- ABOUT SECTION / 50 I'TIQAD -->
+        <section id="kurikulum" class="py-12 px-4 bg-white">
+            <div class="max-w-lg mx-auto">
+                <div class="text-center mb-8 reveal">
+                    <span class="text-gold text-xs font-bold tracking-widest uppercase">Daftar Isi Pembelajaran</span>
+                    <h2 class="text-2xl font-bold text-dark-green mt-2 mb-3">Berani Uji Diri? Berapa dari 50 I'tiqad Ini yang Benar-Benar Anda Pahami?</h2>
+                    <p class="text-sm text-gray-600">Inilah 50 i'tiqad yang membedakan muslim yang <strong class="text-dark-green">berilmu</strong> dengan yang hanya <em>ikut-ikutan</em>.</p>
+                </div>
 
-        <div class="ebook-price-box">
-          <div class="ebook-price-label">Harga Spesial</div>
-          <div class="ebook-price-value">Rp20.000<span>,-</span></div>
-          <div class="ebook-price-note">Pembayaran aman via Lynk.id</div>
-        </div>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 bg-cream rounded-xl p-5 border-l-4 border-dark-green shadow-sm reveal">
+                        <div class="bg-dark-green text-white font-bold text-2xl w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0">20</div>
+                        <div>
+                            <h3 class="font-bold text-dark-green text-base">Sifat Wajib bagi Allah</h3>
+                            <p class="text-xs text-gray-500 mt-1">20 sifat kesempurnaan yang wajib diyakini ada pada Allah SWT.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 bg-cream rounded-xl p-5 border-l-4 border-red-800 shadow-sm reveal">
+                        <div class="bg-red-800 text-white font-bold text-2xl w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0">20</div>
+                        <div>
+                            <h3 class="font-bold text-dark-green text-base">Sifat Mustahil bagi Allah</h3>
+                            <p class="text-xs text-gray-500 mt-1">20 sifat yang mustahil ada pada Allah SWT.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 bg-cream rounded-xl p-5 border-l-4 border-gold shadow-sm reveal">
+                        <div class="bg-gold text-dark-green font-bold text-2xl w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0">1</div>
+                        <div>
+                            <h3 class="font-bold text-dark-green text-base">Sifat Jaiz bagi Allah</h3>
+                            <p class="text-xs text-gray-500 mt-1">1 sifat yang boleh (jaiz) bagi Allah SWT.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 bg-cream rounded-xl p-5 border-l-4 border-dark-green shadow-sm reveal">
+                        <div class="bg-dark-green text-white font-bold text-2xl w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0">4</div>
+                        <div>
+                            <h3 class="font-bold text-dark-green text-base">Sifat Wajib bagi Rasul</h3>
+                            <p class="text-xs text-gray-500 mt-1">4 sifat yang wajib ada pada para Rasul.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 bg-cream rounded-xl p-5 border-l-4 border-red-800 shadow-sm reveal">
+                        <div class="bg-red-800 text-white font-bold text-2xl w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0">4</div>
+                        <div>
+                            <h3 class="font-bold text-dark-green text-base">Sifat Mustahil bagi Rasul</h3>
+                            <p class="text-xs text-gray-500 mt-1">4 sifat yang mustahil ada pada para Rasul.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 bg-cream rounded-xl p-5 border-l-4 border-gold shadow-sm reveal">
+                        <div class="bg-gold text-dark-green font-bold text-2xl w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0">1</div>
+                        <div>
+                            <h3 class="font-bold text-dark-green text-base">Sifat Jaiz bagi Rasul</h3>
+                            <p class="text-xs text-gray-500 mt-1">1 sifat yang boleh (jaiz) bagi para Rasul.</p>
+                        </div>
+                    </div>
+                </div>
 
-        <a href="https://lynk.id/tgkmuhammad" class="btn-beli-ebook" target="_blank">
-          <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
-          Beli Ebook Sekarang
-        </a>
+                <div class="bg-dark-green rounded-xl p-5 text-center text-white mt-6 reveal">
+                    <p class="text-xs opacity-80 uppercase tracking-widest">Total</p>
+                    <p class="text-3xl font-bold text-gold mt-1">50 I'tiqad</p>
+                    <p class="text-xs text-gray-300 mt-2">Wajib diketahui setiap muslim yang sudah baligh dan berakal sehat.</p>
+                </div>
+            </div>
+        </section>
 
-        <div class="ebook-trust">
-          <span>🔒 Pembayaran Aman</span>
-          <span>⚡ Akses Instan</span>
-          <span>📱 PDF Siap Baca</span>
-        </div>
-      </div>
+        <!-- FACILITIES -->
+        <section class="py-12 px-4 bg-white">
+            <div class="max-w-lg mx-auto text-center">
+                <div class="reveal">
+                    <span class="text-gold text-xs font-bold tracking-widest uppercase">Fasilitas</span>
+                    <h2 class="text-2xl font-bold text-dark-green mt-2 mb-6">Apa Saja yang Akan Anda Dapatkan?</h2>
+                </div>
+                <div class="bg-cream rounded-xl p-6 text-left space-y-4 shadow-inner reveal">
+                    <div class="flex items-start gap-3"><span class="text-green-600 mt-1">✔</span><span class="text-sm font-medium">Akses Materi Selamanya (Lifetime)</span></div>
+                    <div class="flex items-start gap-3"><span class="text-green-600 mt-1">✔</span><span class="text-sm font-medium">Kurikulum Belajar Terstruktur</span></div>
+                    <div class="flex items-start gap-3"><span class="text-green-600 mt-1">✔</span><span class="text-sm font-medium">Sistem Progres Belajar Bertahap</span></div>
+                    <div class="flex items-start gap-3"><span class="text-green-600 mt-1">✔</span><span class="text-sm font-medium">Evaluasi Progres Belajar</span></div>
+                    <div class="flex items-start gap-3"><span class="text-green-600 mt-1">✔</span><span class="text-sm font-medium">Ujian Akhir Komprehensif</span></div>
+                    <div class="flex items-start gap-3"><span class="text-green-600 mt-1">✔</span><span class="text-sm font-medium">Sistem Remedial hingga Lulus</span></div>
+                    <div class="flex items-start gap-3"><span class="text-green-600 mt-1">✔</span><span class="text-sm font-medium">Grup Diskusi Interaktif</span></div>
+                    <div class="flex items-start gap-3"><span class="text-green-600 mt-1">✔</span><span class="text-sm font-medium">E-Book Materi Pembelajaran</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INSTRUCTOR -->
+        <section class="py-12 px-4">
+            <div class="max-w-lg mx-auto text-center">
+                <div class="reveal">
+                    <span class="text-gold text-xs font-bold tracking-widest uppercase">Pembimbing</span>
+                    <h2 class="text-2xl font-bold text-dark-green mt-2 mb-8">Belajar Langsung dari Ahlinya</h2>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 reveal">
+                    <div class="w-32 h-32 mx-auto mb-5 rounded-full flex items-center justify-center relative" 
+                         style="background: linear-gradient(135deg, #1A4031 0%, #0F2F3D 100%); box-shadow: 0 0 0 4px #D4AF37, 0 0 0 7px #1A4031, 0 0 25px rgba(212,175,55,0.5);">
+                        <div class="absolute inset-2 rounded-full border border-dashed opacity-60" style="border-color: #D4AF37;"></div>
+                        <span class="font-bold text-5xl tracking-wider" style="color: #D4AF37; font-family: Georgia, 'Times New Roman', serif;">TM</span>
+                        <span class="absolute top-2 text-xs" style="color: #D4AF37;">✦</span>
+                        <span class="absolute bottom-2 text-xs" style="color: #D4AF37;">✦</span>
+                    </div>
+                    <span class="text-gold text-xs font-bold">PEMBIMBING</span>
+                    <h3 class="font-bold text-xl mt-1 text-dark-green">Tengku Muhammad</h3>
+                    <p class="text-xs text-gray-500 mt-2">Pengajar Ilmu Tauhid & Akidah Aswaja</p>
+                    <div class="mt-4 flex flex-wrap gap-2 justify-center">
+                        <span class="inline-block bg-blue-50 text-blue-600 text-xs px-3 py-1 rounded-full text-center">Alumni Aziz Mahmud Huday Vakfi Turki Istanbul</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TARGET AUDIENCE -->
+        <section class="py-12 px-4 bg-white">
+            <div class="max-w-lg mx-auto text-center">
+                <div class="reveal">
+                    <span class="text-gold text-xs font-bold tracking-widest uppercase">Siapa yang bisa mengikuti</span>
+                    <h2 class="text-2xl font-bold text-dark-green mt-2 mb-8">Kelas Ini Cocok untuk Anda yang...</h2>
+                </div>
+                <div class="space-y-4 text-left">
+                    <div class="p-5 border border-gray-100 rounded-xl shadow-sm bg-cream reveal">
+                        <span class="text-gold font-bold text-lg">01</span>
+                        <h3 class="font-bold text-dark-green mt-1">Ingin Mulai dari Nol</h3>
+                        <p class="text-sm text-gray-600 mt-2">Belum pernah belajar tauhid, dan ingin mulai dari dasar yang benar.</p>
+                    </div>
+                    <div class="p-5 border border-gray-100 rounded-xl shadow-sm bg-cream reveal">
+                        <span class="text-gold font-bold text-lg">02</span>
+                        <h3 class="font-bold text-dark-green mt-1">Pelajar & Santri</h3>
+                        <p class="text-sm text-gray-600 mt-2">Ingin memperkuat pemahaman materi tauhid di sekolah/dayah.</p>
+                    </div>
+                    <div class="p-5 border border-gray-100 rounded-xl shadow-sm bg-cream reveal">
+                        <span class="text-gold font-bold text-lg">03</span>
+                        <h3 class="font-bold text-dark-green mt-1">Orang Tua & Pendidik</h3>
+                        <p class="text-sm text-gray-600 mt-2">Ingin mengajarkan akidah yang benar kepada anak dan murid.</p>
+                    </div>
+                    <div class="p-5 border border-gray-100 rounded-xl shadow-sm bg-cream reveal">
+                        <span class="text-gold font-bold text-lg">04</span>
+                        <h3 class="font-bold text-dark-green mt-1">Ingin Iman Lebih Kokoh</h3>
+                        <p class="text-sm text-gray-600 mt-2">Merasa iman goyah dan ingin pondasi akidah yang lebih kuat.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTRIBUTION CTA -->
+        <section class="py-12 px-4">
+            <div class="max-w-lg mx-auto text-center reveal">
+                <span class="text-gold text-xs font-bold tracking-widest uppercase">Cara Mengikuti Pembelajaran</span>
+                <h2 class="text-2xl font-bold text-dark-green mt-2 mb-4">Tidak Ada Tarif Tetap — Anda yang Menentukan</h2>
+                <p class="text-sm text-gray-600 mb-6 leading-relaxed">Kami percaya, <span class="highlight">ilmu agama tidak boleh dihalangi oleh biaya</span>. Tentukan nominal kontribusi sesuai kemampuan dan keikhlasan Anda.</p>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 text-left mb-6 flex items-start gap-4">
+                    <span class="text-2xl">🤝</span>
+                    <div>
+                        <h3 class="font-bold text-dark-green">Kontribusi Pembelajaran</h3>
+                        <p class="text-xs text-gray-500 mt-1">Semakin besar kontribusi Anda, semakin besar pula keberkahan ilmunya.</p>
+                    </div>
+                </div>
+                <button onclick="showDaftar()" class="w-full bg-dark-green text-white font-bold py-4 rounded-lg shadow-md hover:bg-green-900 transition text-lg">
+                    💎 Bangun Pondasi Iman Anda Hari Ini
+                </button>
+            </div>
+        </section>
+
+        <!-- BANNER 50 -->
+        <section class="bg-dark-green py-10 px-4 text-center text-white reveal">
+            <div class="max-w-lg mx-auto">
+                <span class="text-gold font-bold text-5xl block mb-2">50</span>
+                <h2 class="text-xl font-bold">I'tiqad yang Wajib Diketahui</h2>
+                <p class="text-sm text-gray-300 mt-2">Setiap muslim yang sudah baligh dan berakal sehat wajib mengetahui 50 i'tiqad ini.</p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="py-12 px-4 bg-white">
+            <div class="max-w-lg mx-auto">
+                <div class="text-center mb-8 reveal">
+                    <span class="text-gold text-xs font-bold tracking-widest uppercase">FAQ</span>
+                    <h2 class="text-2xl font-bold text-dark-green mt-2">Masih Ragu? Baca Ini Dulu 👇</h2>
+                </div>
+                <div class="space-y-3 reveal">
+                    <details class="group bg-cream rounded-lg border border-gray-200">
+                        <summary class="flex justify-between items-center p-4 cursor-pointer font-semibold text-dark-green">
+                            Apa itu 50 i'tiqad?
+                            <span class="arrow transition-transform duration-300 text-gold font-bold">+</span>
+                        </summary>
+                        <div class="p-4 pt-0 text-sm text-gray-600 border-t border-gray-200 mt-2">
+                            50 i'tiqad adalah 50 keyakinan pokok dalam ilmu tauhid yang wajib diketahui setiap muslim yang sudah baligh dan berakal sehat. Ini adalah pondasi utama dalam berakidah yang benar.
+                        </div>
+                    </details>
+                    <details class="group bg-cream rounded-lg border border-gray-200">
+                        <summary class="flex justify-between items-center p-4 cursor-pointer font-semibold text-dark-green">
+                            Apakah kelas ini berbayar?
+                            <span class="arrow transition-transform duration-300 text-gold font-bold">+</span>
+                        </summary>
+                        <div class="p-4 pt-0 text-sm text-gray-600 border-t border-gray-200 mt-2">
+                            Tidak ada tarif tetap. Anda bebas menentukan nominal kontribusi sesuai kemampuan Anda. Kami percaya ilmu agama tidak boleh dihalangi oleh biaya.
+                        </div>
+                    </details>
+                    <details class="group bg-cream rounded-lg border border-gray-200">
+                        <summary class="flex justify-between items-center p-4 cursor-pointer font-semibold text-dark-green">
+                            Siapa saja yang dapat mengikuti?
+                            <span class="arrow transition-transform duration-300 text-gold font-bold">+</span>
+                        </summary>
+                        <div class="p-4 pt-0 text-sm text-gray-600 border-t border-gray-200 mt-2">
+                            Terbuka untuk pemula, pelajar, santri, mahasiswa, orang tua, pendidik, dan masyarakat umum yang ingin memperdalam tauhid.
+                        </div>
+                    </details>
+                    <details class="group bg-cream rounded-lg border border-gray-200">
+                        <summary class="flex justify-between items-center p-4 cursor-pointer font-semibold text-dark-green">
+                            Apakah materi dapat diakses kembali?
+                            <span class="arrow transition-transform duration-300 text-gold font-bold">+</span>
+                        </summary>
+                        <div class="p-4 pt-0 text-sm text-gray-600 border-t border-gray-200 mt-2">
+                            Ya, Anda mendapatkan akses selamanya (lifetime) untuk materi yang sudah diikuti. Belajar kapan saja, di mana saja.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="bg-dark-green text-white pt-12 pb-8 px-4 text-center">
+            <div class="max-w-lg mx-auto">
+                <span class="text-gold text-xs font-bold tracking-widest uppercase">Mulai Dari Dasar</span>
+                <h2 class="text-2xl font-bold mt-2 mb-4">Jangan Tunda — Ajal Bisa Datang Kapan Saja</h2>
+                <p class="text-sm text-gray-300 mb-8">Bangun pondasi ilmu tauhid dengan lebih terarah. Bekal terbaik untuk akhirat Anda.</p>
+                <button onclick="showDaftar()" class="bg-white text-dark-green font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-100 transition">
+                    🚀 Lihat Cara Pendaftaran
+                </button>
+
+                <div class="mt-16 pt-8 border-t border-gray-700 text-xs text-gray-400 space-y-4">
+                    <p class="font-bold text-white text-base">PESANTREN DAYAH DARUL MUTA'ALLIMIN</p>
+                    <div class="text-gray-300">
+                        <p class="font-bold text-white mb-1">PEMBINA</p>
+                        <p>Tengku Muhammad</p>
+                        <p>Alumni Aziz Mahmud Huday Vakfi Turki Istanbul</p>
+                    </div>
+                    <p>Desa Lamme, Kec. Blang Bintang, Kab. Aceh Besar</p>
+                    <p>Email: admin@darulmutaallimin.com</p>
+                    <p class="mt-6 opacity-60">© 2025 Pesantren Dayah Darul Muta'allimin. Semua Hak Dilindungi</p>
+                </div>
+            </div>
+        </footer>
     </div>
-  </div>
-</div>
 
-<!-- ===== INSTRUCTOR ===== -->
-<div class="instructor-section">
-  <div class="instructor-wrap">
-    <div class="reveal" style="padding: 4rem 0 2rem;">
-      <div class="section-eyebrow">Pembimbing</div>
-      <h2 class="section-title">Dibimbing oleh Asatidzah Aswaja</h2>
-      <p class="section-desc">
-        Pembelajaran didampingi oleh pengajar berpengalaman di bidang ilmu tauhid sesuai pemahaman Ahlussunnah Waljama'ah.
-      </p>
-    </div>
 
-    <div class="instructor-card reveal">
-      <div class="instructor-avatar">AT</div>
-      <div class="instructor-role">Pembimbing</div>
-      <h3>Tim Asatidzah</h3>
-      <p class="title">Akademi I'tiqad Ahlussunnah Waljama'ah</p>
-      <div class="instructor-badge">Pengajar Berpengalaman</div>
-    </div>
-  </div>
-</div>
+    <!-- ==================== HALAMAN DAFTAR ==================== -->
+    <div id="daftar-page" class="hidden py-8 px-4">
+        <div class="max-w-lg mx-auto space-y-6">
+            <button onclick="showLanding()" class="text-dark-green font-semibold flex items-center gap-2 mb-2 hover:underline">
+                ← Kembali ke Halaman Depan
+            </button>
 
-<!-- ===== AUDIENCE ===== -->
-<div class="audience-section">
-  <div class="audience-wrap">
-    <div class="reveal">
-      <div class="section-eyebrow">Siapa yang Bisa Mengikuti?</div>
-      <h2 class="section-title">Terbuka bagi siapa saja yang ingin belajar.</h2>
-    </div>
+            <!-- KARTU 1: KONTRIBUSI -->
+            <div class="bg-white rounded-2xl shadow-sm p-6 border border-gray-100">
+                <h2 class="text-xl font-bold text-center text-dark-green mb-4">Tentukan Kontribusi Pembelajaran</h2>
+                <div class="grid grid-cols-3 gap-3 mb-4">
+                    <button onclick="setNominal(25000, this)" class="btn-nominal border border-gray-300 text-gray-700 py-2 rounded-lg text-sm transition">Rp. 25.000</button>
+                    <button onclick="setNominal(35000, this)" class="btn-nominal border border-gray-300 text-gray-700 py-2 rounded-lg text-sm transition">Rp. 35.000</button>
+                    <button onclick="setNominal(50000, this)" class="btn-nominal border border-gray-300 text-gray-700 py-2 rounded-lg text-sm transition">Rp. 50.000 ★</button>
+                    <button onclick="setNominal(75000, this)" class="btn-nominal border border-gray-300 text-gray-700 py-2 rounded-lg text-sm transition">Rp. 75.000</button>
+                    <button onclick="setNominal(100000, this)" class="btn-nominal border border-gray-300 text-gray-700 py-2 rounded-lg text-sm transition">Rp. 100.000</button>
+                    <button onclick="setNominal(150000, this)" class="btn-nominal border border-gray-300 text-gray-700 py-2 rounded-lg text-sm transition">Rp. 150.000</button>
+                </div>
+                <p class="text-center text-sm text-gray-500 mb-6">Atau masukkan nominal lain sesuai keinginan Anda.</p>
+                <div class="mb-4">
+                    <label class="block text-sm font-semibold mb-2 text-center">Pengisian Kontribusi</label>
+                    <div class="flex border border-gray-300 rounded-lg overflow-hidden">
+                        <div class="bg-dark-green text-white px-4 py-3 font-bold flex items-center">Rp.</div>
+                        <input type="number" id="nominalInput" placeholder="0" class="w-full px-4 py-3 outline-none text-right font-bold text-xl">
+                    </div>
+                </div>
+                <div class="bg-light-green border border-green-200 rounded-lg p-4 mb-4">
+                    <h3 class="font-bold text-dark-green mb-2">Catatan Kontribusi</h3>
+                    <p class="text-sm text-gray-700 leading-relaxed">
+                        Tidak ada tarif tetap untuk mengikuti pembelajaran ini. Anda bebas menentukan nominal kontribusi sesuai keinginan Anda.
+                    </p>
+                </div>
+                <div class="flex items-center gap-2 text-green-600 font-semibold text-sm">
+                    <span>✔</span> Secure 100%
+                </div>
+            </div>
 
-    <div class="audience-list">
-      <div class="audience-item reveal">
-        <h4>Pemula</h4>
-        <p>Bagi yang ingin mulai mempelajari ilmu tauhid dari dasar.</p>
-      </div>
-      <div class="audience-item reveal">
-        <h4>Pelajar & Santri</h4>
-        <p>Untuk membantu memahami materi dasar ilmu tauhid.</p>
-      </div>
-      <div class="audience-item reveal">
-        <h4>Mahasiswa & Umum</h4>
-        <p>Bagi yang ingin memiliki pemahaman yang benar tentang sifat-sifat Allah.</p>
-      </div>
-    </div>
-  </div>
-</div>
+            <!-- HOOK E-BOOK PREMIUM -->
+            <div class="bg-dark-green rounded-2xl p-5 text-white border-2 border-gold shadow-lg">
+                <div class="flex items-start gap-3 mb-3">
+                    <span class="text-3xl">📖</span>
+                    <div>
+                        <h3 class="font-bold text-gold text-base">E-Book Premium dari Tgk Muhammad</h3>
+                        <p class="text-xs text-gray-300 mt-1">Ditulis langsung oleh pembimbing yang menimba ilmu di Turki</p>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-200 mb-3 leading-relaxed">
+                    Rangkuman lengkap <strong class="text-gold">50 i'tiqad</strong> dalam bahasa yang mudah dipahami. Bukan sekadar bacaan — ini <span class="highlight text-dark-green">panduan hidup</span>.
+                </p>
+                <ul class="text-xs text-gray-300 space-y-1 mb-3">
+                    <li>✅ Untuk orang tua yang ingin ajarkan akidah ke anak</li>
+                    <li>✅ Untuk muslim yang ingin memperdalam tauhid</li>
+                    <li>✅ Untuk santri & pelajar yang butuh referensi ringkas</li>
+                </ul>
+            </div>
 
-<!-- ===== CHECKOUT ===== -->
-<div class="checkout-section" id="checkout">
-  <div class="checkout-wrap">
-    <div class="reveal" style="text-align:center; margin-bottom: 2rem;">
-      <div class="section-eyebrow">Tentukan Kontribusi</div>
-      <h2 class="section-title">Kontribusi Pembelajaran</h2>
-      <p class="section-desc" style="margin-bottom:0">
-        Tidak ada tarif tetap. Anda bebas menentukan nominal kontribusi sesuai keinginan Anda.
-      </p>
-    </div>
+            <!-- TOMBOL E-BOOK -->
+            <a href="https://lynk.id/tgkmuhammad" target="_blank" rel="noopener" class="block w-full bg-gold hover:bg-yellow-600 text-dark-green font-bold py-4 rounded-2xl text-center transition shadow-md border-2 border-dark-green">
+                <span class="text-2xl block mb-1">📚</span>
+                Dapatkan E-Book Sekarang
+                <span class="block text-xs font-normal mt-1 opacity-80">💰 Harga segelas kopi, ilmu sepanjang hidup</span>
+            </a>
 
-    <div class="checkout-card reveal">
-      <div class="nominal-title">Pilih Nominal Kontribusi</div>
+            <!-- KARTU 2: LOGIN -->
+            <div class="bg-white rounded-2xl shadow-sm p-4 text-center border border-gray-100">
+                <button onclick="showLogin()" class="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-3 rounded-lg transition">
+                    Sudah mempunyai akun? Login
+                </button>
+            </div>
 
-      <div class="nominal-grid">
-        <button type="button" class="nominal-btn" data-amount="25000">Rp 25.000</button>
-        <button type="button" class="nominal-btn" data-amount="35000">Rp 35.000</button>
-        <button type="button" class="nominal-btn active" data-amount="50000">Rp 50.000</button>
-        <button type="button" class="nominal-btn" data-amount="75000">Rp 75.000</button>
-        <button type="button" class="nominal-btn" data-amount="100000">Rp 100.000</button>
-        <button type="button" class="nominal-btn" data-amount="150000">Rp 150.000</button>
-      </div>
+            <!-- KARTU 3: FORMULIR -->
+            <div class="bg-white rounded-2xl shadow-sm p-6 border border-gray-100">
+                <p class="text-sm text-gray-600 mb-4">Isi data di bawah untuk menerima informasi akses dan transaksi.</p>
+                <h2 class="text-2xl font-bold mb-6">Buat Akun Baru</h2>
+                <form id="formDaftar" class="space-y-5" onsubmit="submitDaftar(event)">
+                    <div>
+                        <label class="block font-semibold mb-1">Nama Lengkap <span class="text-red-500">*</span></label>
+                        <p class="text-xs text-gray-500 mb-2">Masukkan nama lengkap untuk memudahkan pencarian data.</p>
+                        <input type="text" id="inputNama" required placeholder="Masukkan nama lengkap" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-dark-green outline-none">
+                    </div>
+                    <div>
+                        <label class="block font-semibold mb-1">Alamat Email <span class="text-red-500">*</span></label>
+                        <p class="text-xs text-gray-500 mb-2">Kami mengirimkan informasi akses dan transaksi ke email ini.</p>
+                        <input type="email" id="inputEmail" required placeholder="Masukkan email aktif" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-dark-green outline-none">
+                    </div>
+                    <div>
+                        <label class="block font-semibold mb-1">Buat Password <span class="text-red-500">*</span></label>
+                        <p class="text-xs text-gray-500 mb-2">Tuliskan password yang akan digunakan pada website ini.</p>
+                        <input type="password" id="inputPassword" required placeholder="Buat password untuk website ini" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-dark-green outline-none">
+                    </div>
+                    <div>
+                        <label class="block font-semibold mb-1">Nomor WhatsApp <span class="text-red-500">*</span></label>
+                        <p class="text-xs text-gray-500 mb-2">Masukkan nomor WhatsApp aktif untuk notifikasi transaksi.</p>
+                        <input type="tel" id="inputWA" required placeholder="Masukkan nomor WhatsApp aktif" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-dark-green outline-none">
+                    </div>
 
-      <p class="nominal-note">Atau masukkan nominal lain sesuai keinginan Anda.</p>
+                    <!-- METODE PEMBAYARAN -->
+                    <div class="pt-4 border-t border-gray-100">
+                        <h2 class="text-xl font-bold text-dark-green mb-4">Pilih Metode Pembayaran <span class="text-red-500">*</span></h2>
+                        
+                        <label class="block p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 mb-3 transition">
+                            <div class="flex items-center gap-3">
+                                <input type="radio" name="payment" value="BRI" class="w-5 h-5 accent-dark-green" checked>
+                                <div class="flex items-center gap-2 flex-1">
+                                    <span class="font-bold text-blue-800 text-lg">BRI</span>
+                                    <span class="text-xs text-gray-500">Bank Rakyat Indonesia</span>
+                                </div>
+                            </div>
+                            <div class="mt-3 pl-8 bg-white rounded-lg p-3 border border-gray-200">
+                                <p class="text-xs text-gray-500">Nomor Rekening:</p>
+                                <div class="flex items-center justify-between mt-1">
+                                    <p class="font-bold text-dark-green text-lg tracking-wider">0129 5582 503</p>
+                                    <button type="button" onclick="copyRekening()" class="bg-dark-green text-white text-xs px-3 py-1 rounded-md hover:bg-green-900 transition">
+                                        Salin
+                                    </button>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-2">a.n. Tgk Muhammad</p>
+                            </div>
+                        </label>
 
-      <div class="custom-amount">
-        <label>Nominal Custom</label>
-        <div class="custom-input-wrap">
-          <div class="currency-prefix">Rp.</div>
-          <input type="number" id="customAmount" placeholder="Masukkan nominal..." min="0">
+                        <label class="block p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 mb-6 transition">
+                            <div class="flex items-center gap-3">
+                                <input type="radio" name="payment" value="QRIS" class="w-5 h-5 accent-dark-green">
+                                <div class="flex items-center gap-2 flex-1">
+                                    <span class="font-bold text-purple-700 text-lg">QRIS</span>
+                                    <span class="text-xs text-gray-500">Scan & Bayar</span>
+                                </div>
+                            </div>
+                        </label>
+
+                        <button type="submit" class="w-full bg-dark-green hover:bg-green-900 text-white font-bold py-4 rounded-lg text-lg transition shadow-md">
+                            DAFTAR SEKARANG
+                        </button>
+                    </div>
+                </form>
+                <div class="flex items-center justify-center gap-2 mt-6 text-sm text-gray-500">
+                    <span class="text-green-600 text-xl">🛡️</span> Informasi Pribadi Anda Aman
+                </div>
+            </div>
         </div>
-      </div>
-
-      <div class="checkout-summary">
-        <div class="checkout-summary-label">Total Kontribusi</div>
-        <div class="checkout-summary-value" id="totalDisplay">Rp 50.000</div>
-      </div>
-
-      <div class="checkout-divider"></div>
-
-      <div class="nominal-title">Isi Data Pendaftaran</div>
-
-      <div class="form-row">
-        <label>Nama Lengkap <span class="required">*</span></label>
-        <input type="text" id="coName" placeholder="Masukkan nama lengkap">
-      </div>
-
-      <div class="form-row">
-        <label>Email <span class="required">*</span></label>
-        <input type="email" id="coEmail" placeholder="Masukkan email aktif">
-      </div>
-
-      <div class="form-row">
-        <label>Nomor WhatsApp <span class="required">*</span></label>
-        <input type="tel" id="coWa" placeholder="Masukkan nomor WhatsApp aktif">
-      </div>
-
-      <div class="form-row">
-        <label>Motivasi Mengikuti Kelas</label>
-        <textarea id="coMotivasi" placeholder="Ceritakan singkat mengapa Anda ingin mengikuti kelas ini..." style="min-height: 80px;"></textarea>
-      </div>
-
-      <button type="button" class="btn-checkout" onclick="submitCheckout()">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Kirim & Konfirmasi via WhatsApp
-      </button>
-
-      <div class="checkout-secure">
-        <span style="color: var(--wa); font-weight: 800;">🛡️</span>
-        <span>Informasi Pribadi Anda Aman</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== FORM PENDAFTARAN (FormSubmit) ===== -->
-<div class="form-section" id="daftar">
-  <div class="form-wrap">
-    <div class="reveal">
-      <div class="section-eyebrow">Formulir Alternatif</div>
-      <h2 class="section-title">Atau Daftar via Formulir</h2>
-      <p class="section-desc">
-        Isi data berikut untuk mendaftar via email. Setelah mendaftar, silakan bergabung ke komunitas WhatsApp.
-      </p>
     </div>
 
-    <div class="form-card reveal">
-      <form action="https://formsubmit.co/tgkm462@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="Pendaftaran Baru — Kelas Tauhid 20 Sifat">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="https://chat.whatsapp.com/K92YpV3Kfnt1fuYjJc4sBY">
-        <input type="text" name="_honey" style="display:none">
 
-        <div class="form-row">
-          <label>Nama Lengkap <span class="required">*</span></label>
-          <input type="text" name="Nama Lengkap" placeholder="Contoh: Ahmad Fauzi" required>
+    <!-- ==================== HALAMAN LOGIN ==================== -->
+    <div id="login-page" class="hidden py-8 px-4">
+        <div class="max-w-lg mx-auto">
+            <button onclick="showDaftar()" class="text-dark-green font-semibold flex items-center gap-2 mb-4 hover:underline">
+                ← Kembali ke Pendaftaran
+            </button>
+
+            <div class="bg-white rounded-2xl shadow-sm p-8 border border-gray-100">
+                <div class="text-center mb-8">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #1A4031 0%, #0F2F3D 100%); box-shadow: 0 0 0 3px #D4AF37;">
+                        <span class="text-gold text-3xl">🔑</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-dark-green">Login Peserta</h2>
+                    <p class="text-sm text-gray-500 mt-2">Masuk untuk mengakses materi pembelajaran</p>
+                </div>
+
+                <form onsubmit="submitLogin(event)" class="space-y-5">
+                    <div>
+                        <label class="block font-semibold mb-2">Alamat Email</label>
+                        <input type="email" id="loginEmail" required placeholder="Masukkan email terdaftar" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-dark-green outline-none">
+                    </div>
+                    <div>
+                        <label class="block font-semibold mb-2">Password</label>
+                        <input type="password" id="loginPassword" required placeholder="Masukkan password" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-dark-green outline-none">
+                    </div>
+
+                    <button type="submit" class="w-full bg-dark-green hover:bg-green-900 text-white font-bold py-4 rounded-lg text-lg transition shadow-md">
+                        MASUK
+                    </button>
+                </form>
+
+                <div class="mt-6 text-center">
+                    <p class="text-sm text-gray-500">Belum punya akun? 
+                        <button onclick="showDaftar()" class="text-dark-green font-semibold hover:underline">Daftar sekarang</button>
+                    </p>
+                </div>
+
+                <div class="mt-6 p-3 bg-cream rounded-lg border border-gray-200">
+                    <p class="text-xs text-gray-500 text-center">💡 <strong>Info:</strong> Masukkan email & password apa saja untuk mencoba (simulasi).</p>
+                </div>
+            </div>
         </div>
-
-        <div class="form-row">
-          <label>Asal / Instansi</label>
-          <input type="text" name="Asal atau Instansi" placeholder="Contoh: Mahasiswa UIN Jakarta">
-        </div>
-
-        <div class="form-row">
-          <label>Nomor WhatsApp <span class="required">*</span></label>
-          <input type="tel" name="Nomor WhatsApp" placeholder="Contoh: 08123456789" required>
-        </div>
-
-        <div class="form-row">
-          <label>Email</label>
-          <input type="email" name="Email" placeholder="Contoh: nama@email.com">
-        </div>
-
-        <div class="form-row">
-          <label>Motivasi Mengikuti Kelas</label>
-          <textarea name="Motivasi" placeholder="Ceritakan singkat..."></textarea>
-        </div>
-
-        <button type="submit" class="btn-submit">
-          <svg class="form-icon" viewBox="0 0 24 24" style="width:20px;height:20px;stroke:white;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-          Kirim Pendaftaran
-        </button>
-
-        <div class="form-note">
-          🔒 Data Anda aman & hanya digunakan untuk keperluan kelas
-        </div>
-      </form>
-
-      <div class="divider-text">atau</div>
-
-      <a href="https://chat.whatsapp.com/K92YpV3Kfnt1fuYjJc4sBY" class="btn-wa-after" target="_blank">
-        <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Langsung Gabung Komunitas WhatsApp
-      </a>
     </div>
-  </div>
-</div>
 
-<!-- ===== FOOTER ===== -->
-<footer>
-  <div class="brand">Akademi I'tiqad Ahlussunnah Waljama'ah</div>
-  <p>© 2025 Ilmu Tauhid — 20 Sifat. Semua hak dilindungi.</p>
-  <div class="footer-contact">
-    <a href="https://chat.whatsapp.com/K92YpV3Kfnt1fuYjJc4sBY" class="footer-btn footer-wa" target="_blank">
-      <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Komunitas
-    </a>
-    <a href="https://lynk.id/tgkmuhammad" class="footer-btn footer-wa" style="color: var(--gold); border-color: var(--gold);" target="_blank">
-      📖 Beli Ebook
-    </a>
-  </div>
-</footer>
 
-<!-- ===== FLOAT WA ===== -->
-<a href="https://chat.whatsapp.com/K92YpV3Kfnt1fuYjJc4sBY" class="float-btn" target="_blank" aria-label="Chat WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
+    <!-- ==================== DASHBOARD PESERTA ==================== -->
+    <div id="dashboard-page" class="hidden py-8 px-4">
+        <div class="max-w-lg mx-auto">
+            
+            <div class="bg-dark-green rounded-2xl p-6 text-white mb-6 shadow-lg">
+                <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-full flex items-center justify-center" style="background: #D4AF37;">
+                        <span class="text-dark-green font-bold text-xl" id="userInitial">P</span>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-xs text-gold uppercase tracking-widest">Selamat Datang,</p>
+                        <p class="font-bold text-lg" id="userName">Peserta Baru</p>
+                        <p class="text-xs text-gray-300" id="userEmail">peserta@email.com</p>
+                    </div>
+                </div>
+            </div>
 
-<script>
-  // Reveal animation
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('active'), i * 60);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm mb-6">
+                <h3 class="font-bold text-dark-green mb-3">📊 Progres Belajar Anda</h3>
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm text-gray-600">Bab diselesaikan</span>
+                    <span class="text-sm font-bold text-dark-green">0 / 6</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                    <div class="bg-gradient-to-r from-gold to-yellow-600 h-3 rounded-full" style="width: 0%;"></div>
+                </div>
+                <p class="text-xs text-gray-400 mt-2">Ayo mulai belajar dari Bab 1!</p>
+            </div>
 
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm mb-6">
+                <h3 class="font-bold text-dark-green mb-4">📚 Daftar Materi Pembelajaran</h3>
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3 p-3 bg-cream rounded-lg border border-gray-200 hover:border-gold transition cursor-pointer">
+                        <div class="bg-dark-green text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">01</div>
+                        <div class="flex-1">
+                            <p class="font-semibold text-dark-green text-sm">Sifat Wajib bagi Allah (20)</p>
+                            <p class="text-xs text-gray-500">Bab 1 - Pondasi utama</p>
+                        </div>
+                        <span class="text-gold">▶</span>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-cream rounded-lg border border-gray-200 hover:border-gold transition cursor-pointer">
+                        <div class="bg-red-800 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">02</div>
+                        <div class="flex-1">
+                            <p class="font-semibold text-dark-green text-sm">Sifat Mustahil bagi Allah (20)</p>
+                            <p class="text-xs text-gray-500">Bab 2 - Lanjutan</p>
+                        </div>
+                        <span class="text-gold">▶</span>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-cream rounded-lg border border-gray-200 hover:border-gold transition cursor-pointer">
+                        <div class="bg-gold text-dark-green w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">03</div>
+                        <div class="flex-1">
+                            <p class="font-semibold text-dark-green text-sm">Sifat Jaiz bagi Allah (1)</p>
+                            <p class="text-xs text-gray-500">Bab 3 - Pelengkap</p>
+                        </div>
+                        <span class="text-gold">▶</span>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-cream rounded-lg border border-gray-200 hover:border-gold transition cursor-pointer">
+                        <div class="bg-dark-green text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">04</div>
+                        <div class="flex-1">
+                            <p class="font-semibold text-dark-green text-sm">Sifat Wajib bagi Rasul (4)</p>
+                            <p class="text-xs text-gray-500">Bab 4 - Akidah Rasul</p>
+                        </div>
+                        <span class="text-gold">▶</span>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-cream rounded-lg border border-gray-200 hover:border-gold transition cursor-pointer">
+                        <div class="bg-red-800 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">05</div>
+                        <div class="flex-1">
+                            <p class="font-semibold text-dark-green text-sm">Sifat Mustahil bagi Rasul (4)</p>
+                            <p class="text-xs text-gray-500">Bab 5 - Lanjutan</p>
+                        </div>
+                        <span class="text-gold">▶</span>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-cream rounded-lg border border-gray-200 hover:border-gold transition cursor-pointer">
+                        <div class="bg-gold text-dark-green w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">06</div>
+                        <div class="flex-1">
+                            <p class="font-semibold text-dark-green text-sm">Sifat Jaiz bagi Rasul (1)</p>
+                            <p class="text-xs text-gray-500">Bab 6 - Pelengkap</p>
+                        </div>
+                        <span class="text-gold">▶</span>
+                    </div>
+                </div>
+            </div>
 
-  // Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
+            <a href="https://lynk.id/tgkmuhammad" target="_blank" rel="noopener" class="block w-full bg-gold hover:bg-yellow-600 text-dark-green font-bold py-4 rounded-2xl text-center transition shadow-md border-2 border-dark-green mb-6">
+                <span class="text-2xl block mb-1">📚</span>
+                Dapatkan E-Book Sekarang
+                <span class="block text-xs font-normal mt-1 opacity-80">💰 Investasi terbaik untuk akhirat Anda</span>
+            </a>
 
-  // ===== CHECKOUT =====
-  let selectedAmount = 50000;
+            <button onclick="logout()" class="w-full bg-red-50 hover:bg-red-100 text-red-700 font-bold py-3 rounded-lg transition border border-red-200">
+                🚪 Keluar dari Akun
+            </button>
 
-  document.querySelectorAll('.nominal-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-      document.querySelectorAll('.nominal-btn').forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
-      selectedAmount = parseInt(this.dataset.amount);
-      document.getElementById('customAmount').value = '';
-      updateTotal();
-    });
-  });
+            <p class="text-xs text-gray-400 text-center mt-6">© 2025 Pesantren Dayah Darul Muta'allimin</p>
+        </div>
+    </div>
 
-  document.getElementById('customAmount').addEventListener('input', function() {
-    if (this.value) {
-      selectedAmount = parseInt(this.value) || 0;
-      document.querySelectorAll('.nominal-btn').forEach(b => b.classList.remove('active'));
-    }
-    updateTotal();
-  });
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        const LINK_GRUP_WA = 'https://chat.whatsapp.com/K92YpV3Kfnt1fuYjJc4sBY';
 
-  function updateTotal() {
-    const formatted = 'Rp ' + selectedAmount.toLocaleString('id-ID');
-    document.getElementById('totalDisplay').textContent = formatted;
-  }
+        function hideAllPages() {
+            document.getElementById('landing-page').classList.add('hidden');
+            document.getElementById('daftar-page').classList.add('hidden');
+            document.getElementById('login-page').classList.add('hidden');
+            document.getElementById('dashboard-page').classList.add('hidden');
+        }
+        function showLanding() {
+            hideAllPages();
+            document.getElementById('landing-page').classList.remove('hidden');
+            document.getElementById('waFloat').style.display = 'flex';
+            window.scrollTo(0, 0);
+            applyReveal();
+        }
+        function showDaftar() {
+            hideAllPages();
+            document.getElementById('daftar-page').classList.remove('hidden');
+            document.getElementById('waFloat').style.display = 'none';
+            window.scrollTo(0, 0);
+        }
+        function showLogin() {
+            hideAllPages();
+            document.getElementById('login-page').classList.remove('hidden');
+            document.getElementById('waFloat').style.display = 'none';
+            window.scrollTo(0, 0);
+        }
+        function showDashboard(nama, email) {
+            hideAllPages();
+            document.getElementById('userName').textContent = nama;
+            document.getElementById('userEmail').textContent = email;
+            document.getElementById('userInitial').textContent = nama.charAt(0).toUpperCase();
+            document.getElementById('dashboard-page').classList.remove('hidden');
+            document.getElementById('waFloat').style.display = 'none';
+            window.scrollTo(0, 0);
+        }
 
-  function submitCheckout() {
-    const name = document.getElementById('coName').value.trim();
-    const email = document.getElementById('coEmail').value.trim();
-    const wa = document.getElementById('coWa').value.trim();
-    const motivasi = document.getElementById('coMotivasi').value.trim();
+        function setNominal(amount, element) {
+            document.getElementById('nominalInput').value = amount;
+            document.querySelectorAll('.btn-nominal').forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.add('border-gray-300', 'text-gray-700');
+            });
+            element.classList.add('active');
+            element.classList.remove('border-gray-300', 'text-gray-700');
+        }
 
-    if (!name) { alert('Mohon isi nama lengkap'); return; }
-    if (!email) { alert('Mohon isi email'); return; }
-    if (!wa) { alert('Mohon isi nomor WhatsApp'); return; }
-    if (selectedAmount <= 0) { alert('Mohon pilih nominal kontribusi'); return; }
+        function copyRekening() {
+            navigator.clipboard.writeText('01295582503').then(() => {
+                alert('Nomor rekening BRI berhasil disalin!');
+            }).catch(() => {
+                alert('Nomor Rekening: 0129 5582 503');
+            });
+        }
 
-    const nominalFormatted = 'Rp ' + selectedAmount.toLocaleString('id-ID');
+        function submitDaftar(event) {
+            event.preventDefault();
+            const nama = document.getElementById('inputNama').value.trim();
+            const email = document.getElementById('inputEmail').value.trim();
 
-    const message = 
-`Assalamu'alaikum warahmatullahi wabarakatuh,
+            localStorage.setItem('pesertaNama', nama);
+            localStorage.setItem('pesertaEmail', email);
 
-Saya ingin mendaftar *Kelas Tauhid 20 Sifat*.
+            alert('✅ Pendaftaran berhasil!\n\nNama: ' + nama + '\nEmail: ' + email + '\n\nSilakan login untuk mengakses dashboard pembelajaran.');
+            showLogin();
+        }
 
-━━━━━━━━━━━━━━━━
-📋 *DATA PENDAFTARAN*
-━━━━━━━━━━━━━━━━
+        function submitLogin(event) {
+            event.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
 
-👤 Nama: ${name}
-📧 Email: ${email}
-📱 WhatsApp: ${wa}
-💰 Kontribusi: ${nominalFormatted}
-${motivasi ? '\n💭 Motivasi:\n' + motivasi : ''}
+            if (!email || !password) {
+                alert('Mohon isi email dan password!');
+                return;
+            }
 
-━━━━━━━━━━━━━━━━
+            let nama = localStorage.getItem('pesertaNama');
+            let emailTersimpan = localStorage.getItem('pesertaEmail');
 
-Mohon informasi cara pembayaran dan langkah selanjutnya.
+            if (!nama) {
+                nama = email.split('@')[0];
+                nama = nama.charAt(0).toUpperCase() + nama.slice(1);
+            }
+            if (!emailTersimpan) {
+                emailTersimpan = email;
+            }
 
-Terima kasih.
-Wassalamu'alaikum warahmatullahi wabarakatuh.`;
+            alert('🔓 Login berhasil! Selamat datang, ' + nama);
+            showDashboard(nama, emailTersimpan);
+        }
 
-    const encoded = encodeURIComponent(message);
-    const url = `https://wa.me/6285206648762?text=${encoded}`;
-    window.open(url, '_blank');
-  }
-</script>
+        function logout() {
+            if (confirm('Yakin ingin keluar dari akun?')) {
+                showLanding();
+            }
+        }
+
+        function applyReveal() {
+            const reveals = document.querySelectorAll('#landing-page .reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            reveals.forEach(el => {
+                el.classList.remove('active');
+                observer.observe(el);
+            });
+        }
+
+        window.addEventListener('load', applyReveal);
+    </script>
 </body>
 </html>
