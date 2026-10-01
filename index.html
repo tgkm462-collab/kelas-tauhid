@@ -34,6 +34,7 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  /* HERO */
   .hero {
     background: var(--green-dark);
     color: white;
@@ -188,6 +189,28 @@
     transform: translateY(-2px);
   }
 
+  .btn-hero-ebook {
+    background: white;
+    color: var(--green-dark);
+    padding: 1.1rem 2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    transition: all 0.3s;
+    border: 2px solid white;
+    box-shadow: 0 10px 25px rgba(255,255,255,0.2);
+  }
+
+  .btn-hero-ebook:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(255,255,255,0.3);
+  }
+
   .btn-hero-secondary {
     background: transparent;
     color: white;
@@ -225,6 +248,7 @@
     flex-shrink: 0;
   }
 
+  /* BOOK HERO */
   .book-wrap {
     position: relative;
     z-index: 1;
@@ -330,6 +354,7 @@
     z-index: 1;
   }
 
+  /* SECTION */
   section {
     padding: 4rem 1.5rem;
     max-width: 640px;
@@ -364,6 +389,7 @@
     margin-bottom: 3rem;
   }
 
+  /* WHY */
   .why-section {
     background: white;
     max-width: 100%;
@@ -372,6 +398,7 @@
 
   .why-wrap { max-width: 640px; margin: 0 auto; }
 
+  /* FEATURE */
   .feature-list {
     display: flex;
     flex-direction: column;
@@ -413,6 +440,7 @@
     line-height: 1.6;
   }
 
+  /* CURRICULUM */
   .curriculum-section {
     background: var(--cream);
     max-width: 100%;
@@ -425,7 +453,6 @@
     border-radius: 16px;
     padding: 2rem 1.5rem;
     border: 1px solid #e8e4da;
-    position: relative;
   }
 
   .bab-badge {
@@ -483,6 +510,7 @@
     font-style: italic;
   }
 
+  /* FACILITIES */
   .facilities-section {
     background: white;
     max-width: 100%;
@@ -529,7 +557,7 @@
     flex-shrink: 0;
   }
 
-  /* ===== EBOOK SECTION ===== */
+  /* EBOOK SECTION */
   .ebook-section {
     background: linear-gradient(180deg, #0f261f 0%, #1a3d34 100%);
     color: white;
@@ -752,7 +780,6 @@
     transition: all 0.3s;
     font-family: inherit;
     box-shadow: 0 15px 35px rgba(212,166,86,0.4);
-    letter-spacing: 0.02em;
   }
 
   .btn-beli-ebook:hover {
@@ -782,6 +809,7 @@
     gap: 0.35rem;
   }
 
+  /* INSTRUCTOR */
   .instructor-section {
     background: var(--cream);
     max-width: 100%;
@@ -795,7 +823,6 @@
     padding: 2rem 1.5rem;
     text-align: center;
     border: 1px solid #e8e4da;
-    margin-bottom: 1rem;
     transition: all 0.3s;
   }
 
@@ -849,6 +876,7 @@
     font-weight: 700;
   }
 
+  /* AUDIENCE */
   .audience-section {
     background: white;
     max-width: 100%;
@@ -882,6 +910,211 @@
     font-size: 0.9rem;
   }
 
+  /* CHECKOUT SECTION */
+  .checkout-section {
+    background: linear-gradient(180deg, #f8f6f0 0%, #ffffff 100%);
+    max-width: 100%;
+    padding: 5rem 1.5rem;
+  }
+
+  .checkout-wrap { max-width: 640px; margin: 0 auto; }
+
+  .checkout-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    border: 2px solid #e8e4da;
+    box-shadow: 0 20px 60px rgba(26,61,52,0.08);
+  }
+
+  .nominal-title {
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--green-dark);
+    margin-bottom: 1.5rem;
+  }
+
+  .nominal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .nominal-btn {
+    background: white;
+    border: 2px solid #e8e4da;
+    border-radius: 10px;
+    padding: 0.85rem 0.5rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--green-dark);
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  .nominal-btn:hover {
+    border-color: var(--green);
+  }
+
+  .nominal-btn.active {
+    background: var(--green-dark);
+    border-color: var(--green-dark);
+    color: white;
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(26,61,52,0.25);
+  }
+
+  .nominal-btn.active::after {
+    content: '★';
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    font-size: 0.7rem;
+    color: var(--gold);
+  }
+
+  .nominal-note {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    margin-bottom: 1.75rem;
+    font-style: italic;
+  }
+
+  .custom-amount {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    border: 2px dashed #d4c9b3;
+  }
+
+  .custom-amount label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--green-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .custom-input-wrap {
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 2px solid #e8e4da;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+
+  .custom-input-wrap:focus-within {
+    border-color: var(--green);
+    box-shadow: 0 0 0 4px rgba(45,95,79,0.08);
+  }
+
+  .currency-prefix {
+    background: var(--green-dark);
+    color: white;
+    padding: 0.85rem 1rem;
+    font-weight: 800;
+    font-size: 0.95rem;
+  }
+
+  .custom-input-wrap input {
+    flex: 1;
+    border: none;
+    padding: 0.85rem 1rem;
+    font-size: 1rem;
+    font-family: inherit;
+    font-weight: 700;
+    color: var(--green-dark);
+    background: transparent;
+    text-align: right;
+    outline: none;
+  }
+
+  .custom-input-wrap input::placeholder {
+    font-weight: 400;
+    color: var(--text-gray);
+    text-align: left;
+  }
+
+  .checkout-summary {
+    background: linear-gradient(135deg, rgba(212,166,86,0.1), rgba(212,166,86,0.05));
+    border: 2px solid var(--gold);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .checkout-summary-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--green-dark);
+  }
+
+  .checkout-summary-value {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--green-dark);
+    letter-spacing: -0.02em;
+  }
+
+  .checkout-divider {
+    height: 1px;
+    background: #e8e4da;
+    margin: 1.5rem 0;
+  }
+
+  .btn-checkout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 1.2rem;
+    background: linear-gradient(135deg, var(--green-dark), var(--green));
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: inherit;
+    box-shadow: 0 15px 35px rgba(26,61,52,0.3);
+    margin-top: 1rem;
+  }
+
+  .btn-checkout:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 45px rgba(26,61,52,0.4);
+  }
+
+  .btn-checkout svg {
+    width: 22px;
+    height: 22px;
+    fill: white;
+  }
+
+  .checkout-secure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: var(--text-gray);
+  }
+
+  /* FORM SECTION */
   .form-section {
     background: var(--cream);
     max-width: 100%;
@@ -976,10 +1209,6 @@
     font-size: 0.8rem;
     color: var(--text-gray);
     margin-top: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.4rem;
   }
 
   .btn-wa-after {
@@ -1029,6 +1258,7 @@
   .divider-text::before { left: 0; }
   .divider-text::after { right: 0; }
 
+  /* FLOAT WA */
   .float-btn {
     position: fixed;
     bottom: 20px;
@@ -1063,6 +1293,7 @@
     50% { box-shadow: 0 10px 30px rgba(37,211,102,0.5), 0 0 0 15px rgba(37,211,102,0); }
   }
 
+  /* FOOTER */
   footer {
     background: var(--green-dark);
     color: rgba(255,255,255,0.7);
@@ -1109,6 +1340,7 @@
     color: white;
   }
 
+  /* REVEAL */
   .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -1124,6 +1356,7 @@
     section { padding: 5rem 2rem; }
     .hero { padding: 5rem 2rem 6rem; }
     .form-section { padding: 5rem 2rem 6rem; }
+    .checkout-section { padding: 6rem 2rem; }
     .ebook-section { padding: 6rem 2rem; }
     .ebook-grid {
       grid-template-columns: 280px 1fr;
@@ -1152,11 +1385,19 @@
     .ebook-cover-title h3 {
       font-size: 1.2rem;
     }
+    .nominal-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .nominal-btn {
+      font-size: 0.85rem;
+      padding: 0.75rem 0.4rem;
+    }
   }
 </style>
 </head>
 <body>
 
+<!-- ===== HERO ===== -->
 <div class="hero">
   <div class="hero-pattern"></div>
 
@@ -1178,11 +1419,11 @@
     </div>
 
     <div class="hero-cta">
-      <a href="#daftar" class="btn-hero-form">
+      <a href="#checkout" class="btn-hero-form">
         <svg class="form-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
         Daftar Kelas Sekarang
       </a>
-      <a href="#ebook" class="btn-hero-form" style="background: white; color: var(--green-dark); border-color: white;">
+      <a href="#ebook" class="btn-hero-ebook">
         📖 Beli Ebook
       </a>
       <a href="https://chat.whatsapp.com/K92YpV3Kfnt1fuYjJc4sBY" class="btn-hero-wa" target="_blank">
@@ -1208,6 +1449,7 @@
   </div>
 </div>
 
+<!-- ===== WHY ===== -->
 <div class="why-section">
   <div class="why-wrap">
     <div class="reveal">
@@ -1222,6 +1464,7 @@
   </div>
 </div>
 
+<!-- ===== TENTANG ===== -->
 <section>
   <div class="reveal">
     <div class="section-eyebrow">Tentang Pembelajaran</div>
@@ -1250,6 +1493,7 @@
   </div>
 </section>
 
+<!-- ===== KURIKULUM ===== -->
 <div class="curriculum-section" id="kurikulum">
   <div class="curriculum-wrap">
     <div class="reveal" style="padding: 4rem 0 2rem;">
@@ -1276,64 +1520,35 @@
   </div>
 </div>
 
+<!-- ===== FASILITAS ===== -->
 <div class="facilities-section">
   <div class="facilities-wrap">
     <div class="reveal">
       <div class="section-eyebrow">Fasilitas</div>
       <h2 class="section-title">Apa Saja yang Akan Anda Dapatkan?</h2>
       <p class="section-desc">
-        Kami tidak hanya menyediakan materi, tetapi juga mendampingi proses belajar Anda secara bertahap.
-        <br><br>
         Dengan mengikuti kelas ini, Anda akan mendapatkan:
       </p>
     </div>
 
     <div class="facility-list">
-      <div class="facility reveal">
-        <div class="facility-check">✓</div>
-        <span>Akses Materi Selamanya (Lifetime)</span>
-      </div>
-      <div class="facility reveal">
-        <div class="facility-check">✓</div>
-        <span>Kurikulum Belajar Terstruktur</span>
-      </div>
-      <div class="facility reveal">
-        <div class="facility-check">✓</div>
-        <span>Pembahasan 20 Sifat Wajib Allah</span>
-      </div>
-      <div class="facility reveal">
-        <div class="facility-check">✓</div>
-        <span>Dalil-dalil dari Al-Qur'an dan Hadits</span>
-      </div>
-      <div class="facility reveal">
-        <div class="facility-check">✓</div>
-        <span>Evaluasi Progres Belajar</span>
-      </div>
-      <div class="facility reveal">
-        <div class="facility-check">✓</div>
-        <span>Ujian Akhir Komprehensif</span>
-      </div>
-      <div class="facility reveal">
-        <div class="facility-check">✓</div>
-        <span>Grup Diskusi Interaktif</span>
-      </div>
-      <div class="facility reveal">
-        <div class="facility-check">✓</div>
-        <span>E-Book Materi Pembelajaran</span>
-      </div>
-      <div class="facility reveal">
-        <div class="facility-check">✓</div>
-        <span>Sertifikat Kelulusan</span>
-      </div>
+      <div class="facility reveal"><div class="facility-check">✓</div><span>Akses Materi Selamanya (Lifetime)</span></div>
+      <div class="facility reveal"><div class="facility-check">✓</div><span>Kurikulum Belajar Terstruktur</span></div>
+      <div class="facility reveal"><div class="facility-check">✓</div><span>Pembahasan 20 Sifat Wajib Allah</span></div>
+      <div class="facility reveal"><div class="facility-check">✓</div><span>Dalil-dalil dari Al-Qur'an dan Hadits</span></div>
+      <div class="facility reveal"><div class="facility-check">✓</div><span>Evaluasi Progres Belajar</span></div>
+      <div class="facility reveal"><div class="facility-check">✓</div><span>Ujian Akhir Komprehensif</span></div>
+      <div class="facility reveal"><div class="facility-check">✓</div><span>Grup Diskusi Interaktif</span></div>
+      <div class="facility reveal"><div class="facility-check">✓</div><span>E-Book Materi Pembelajaran</span></div>
+      <div class="facility reveal"><div class="facility-check">✓</div><span>Sertifikat Kelulusan</span></div>
     </div>
   </div>
 </div>
 
-<!-- ===== SECTION EBOOK ===== -->
+<!-- ===== EBOOK ===== -->
 <div class="ebook-section" id="ebook">
   <div class="ebook-wrap">
     <div class="ebook-grid">
-
       <div class="ebook-visual">
         <div class="ebook-book">
           <div class="ebook-book-cover">
@@ -1379,11 +1594,11 @@
           <span>📱 PDF Siap Baca</span>
         </div>
       </div>
-
     </div>
   </div>
 </div>
 
+<!-- ===== INSTRUCTOR ===== -->
 <div class="instructor-section">
   <div class="instructor-wrap">
     <div class="reveal" style="padding: 4rem 0 2rem;">
@@ -1404,6 +1619,7 @@
   </div>
 </div>
 
+<!-- ===== AUDIENCE ===== -->
 <div class="audience-section">
   <div class="audience-wrap">
     <div class="reveal">
@@ -1428,19 +1644,94 @@
   </div>
 </div>
 
+<!-- ===== CHECKOUT ===== -->
+<div class="checkout-section" id="checkout">
+  <div class="checkout-wrap">
+    <div class="reveal" style="text-align:center; margin-bottom: 2rem;">
+      <div class="section-eyebrow">Tentukan Kontribusi</div>
+      <h2 class="section-title">Kontribusi Pembelajaran</h2>
+      <p class="section-desc" style="margin-bottom:0">
+        Tidak ada tarif tetap. Anda bebas menentukan nominal kontribusi sesuai keinginan Anda.
+      </p>
+    </div>
+
+    <div class="checkout-card reveal">
+      <div class="nominal-title">Pilih Nominal Kontribusi</div>
+
+      <div class="nominal-grid">
+        <button type="button" class="nominal-btn" data-amount="25000">Rp 25.000</button>
+        <button type="button" class="nominal-btn" data-amount="35000">Rp 35.000</button>
+        <button type="button" class="nominal-btn active" data-amount="50000">Rp 50.000</button>
+        <button type="button" class="nominal-btn" data-amount="75000">Rp 75.000</button>
+        <button type="button" class="nominal-btn" data-amount="100000">Rp 100.000</button>
+        <button type="button" class="nominal-btn" data-amount="150000">Rp 150.000</button>
+      </div>
+
+      <p class="nominal-note">Atau masukkan nominal lain sesuai keinginan Anda.</p>
+
+      <div class="custom-amount">
+        <label>Nominal Custom</label>
+        <div class="custom-input-wrap">
+          <div class="currency-prefix">Rp.</div>
+          <input type="number" id="customAmount" placeholder="Masukkan nominal..." min="0">
+        </div>
+      </div>
+
+      <div class="checkout-summary">
+        <div class="checkout-summary-label">Total Kontribusi</div>
+        <div class="checkout-summary-value" id="totalDisplay">Rp 50.000</div>
+      </div>
+
+      <div class="checkout-divider"></div>
+
+      <div class="nominal-title">Isi Data Pendaftaran</div>
+
+      <div class="form-row">
+        <label>Nama Lengkap <span class="required">*</span></label>
+        <input type="text" id="coName" placeholder="Masukkan nama lengkap">
+      </div>
+
+      <div class="form-row">
+        <label>Email <span class="required">*</span></label>
+        <input type="email" id="coEmail" placeholder="Masukkan email aktif">
+      </div>
+
+      <div class="form-row">
+        <label>Nomor WhatsApp <span class="required">*</span></label>
+        <input type="tel" id="coWa" placeholder="Masukkan nomor WhatsApp aktif">
+      </div>
+
+      <div class="form-row">
+        <label>Motivasi Mengikuti Kelas</label>
+        <textarea id="coMotivasi" placeholder="Ceritakan singkat mengapa Anda ingin mengikuti kelas ini..." style="min-height: 80px;"></textarea>
+      </div>
+
+      <button type="button" class="btn-checkout" onclick="submitCheckout()">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Kirim & Konfirmasi via WhatsApp
+      </button>
+
+      <div class="checkout-secure">
+        <span style="color: var(--wa); font-weight: 800;">🛡️</span>
+        <span>Informasi Pribadi Anda Aman</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FORM PENDAFTARAN (FormSubmit) ===== -->
 <div class="form-section" id="daftar">
   <div class="form-wrap">
     <div class="reveal">
-      <div class="section-eyebrow">Formulir Pendaftaran</div>
-      <h2 class="section-title">Daftar Kelas Tauhid 20 Sifat</h2>
+      <div class="section-eyebrow">Formulir Alternatif</div>
+      <h2 class="section-title">Atau Daftar via Formulir</h2>
       <p class="section-desc">
-        Isi data berikut untuk mendaftar. Setelah mendaftar, silakan bergabung ke komunitas WhatsApp.
+        Isi data berikut untuk mendaftar via email. Setelah mendaftar, silakan bergabung ke komunitas WhatsApp.
       </p>
     </div>
 
     <div class="form-card reveal">
       <form action="https://formsubmit.co/tgkm462@gmail.com" method="POST">
-        
         <input type="hidden" name="_subject" value="Pendaftaran Baru — Kelas Tauhid 20 Sifat">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
@@ -1469,7 +1760,7 @@
 
         <div class="form-row">
           <label>Motivasi Mengikuti Kelas</label>
-          <textarea name="Motivasi" placeholder="Ceritakan singkat mengapa Anda ingin mengikuti kelas ini..."></textarea>
+          <textarea name="Motivasi" placeholder="Ceritakan singkat..."></textarea>
         </div>
 
         <button type="submit" class="btn-submit">
@@ -1492,6 +1783,7 @@
   </div>
 </div>
 
+<!-- ===== FOOTER ===== -->
 <footer>
   <div class="brand">Akademi I'tiqad Ahlussunnah Waljama'ah</div>
   <p>© 2025 Ilmu Tauhid — 20 Sifat. Semua hak dilindungi.</p>
@@ -1506,11 +1798,13 @@
   </div>
 </footer>
 
+<!-- ===== FLOAT WA ===== -->
 <a href="https://chat.whatsapp.com/K92YpV3Kfnt1fuYjJc4sBY" class="float-btn" target="_blank" aria-label="Chat WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
 <script>
+  // Reveal animation
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
@@ -1522,6 +1816,7 @@
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const target = document.querySelector(this.getAttribute('href'));
@@ -1531,6 +1826,72 @@
       }
     });
   });
+
+  // ===== CHECKOUT =====
+  let selectedAmount = 50000;
+
+  document.querySelectorAll('.nominal-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.nominal-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      selectedAmount = parseInt(this.dataset.amount);
+      document.getElementById('customAmount').value = '';
+      updateTotal();
+    });
+  });
+
+  document.getElementById('customAmount').addEventListener('input', function() {
+    if (this.value) {
+      selectedAmount = parseInt(this.value) || 0;
+      document.querySelectorAll('.nominal-btn').forEach(b => b.classList.remove('active'));
+    }
+    updateTotal();
+  });
+
+  function updateTotal() {
+    const formatted = 'Rp ' + selectedAmount.toLocaleString('id-ID');
+    document.getElementById('totalDisplay').textContent = formatted;
+  }
+
+  function submitCheckout() {
+    const name = document.getElementById('coName').value.trim();
+    const email = document.getElementById('coEmail').value.trim();
+    const wa = document.getElementById('coWa').value.trim();
+    const motivasi = document.getElementById('coMotivasi').value.trim();
+
+    if (!name) { alert('Mohon isi nama lengkap'); return; }
+    if (!email) { alert('Mohon isi email'); return; }
+    if (!wa) { alert('Mohon isi nomor WhatsApp'); return; }
+    if (selectedAmount <= 0) { alert('Mohon pilih nominal kontribusi'); return; }
+
+    const nominalFormatted = 'Rp ' + selectedAmount.toLocaleString('id-ID');
+
+    const message = 
+`Assalamu'alaikum warahmatullahi wabarakatuh,
+
+Saya ingin mendaftar *Kelas Tauhid 20 Sifat*.
+
+━━━━━━━━━━━━━━━━
+📋 *DATA PENDAFTARAN*
+━━━━━━━━━━━━━━━━
+
+👤 Nama: ${name}
+📧 Email: ${email}
+📱 WhatsApp: ${wa}
+💰 Kontribusi: ${nominalFormatted}
+${motivasi ? '\n💭 Motivasi:\n' + motivasi : ''}
+
+━━━━━━━━━━━━━━━━
+
+Mohon informasi cara pembayaran dan langkah selanjutnya.
+
+Terima kasih.
+Wassalamu'alaikum warahmatullahi wabarakatuh.`;
+
+    const encoded = encodeURIComponent(message);
+    const url = `https://wa.me/6285206648762?text=${encoded}`;
+    window.open(url, '_blank');
+  }
 </script>
 </body>
 </html>
